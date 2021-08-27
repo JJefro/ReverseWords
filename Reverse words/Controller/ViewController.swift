@@ -30,7 +30,7 @@ class ViewController: UIViewController {
     
     @IBAction func buttonPressed(_ sender: UIButton) {
         guard let text = textField.text else {fatalError()}
-        if button.currentTitle == "Reverse", !text.isEmpty {
+        if button.currentTitle == "Reverse" {
             
             resultLabel.text = reverse(string: text)
             textField.bottomGrayLine.isHidden = false
@@ -38,7 +38,7 @@ class ViewController: UIViewController {
             
             self.button.setTitle("Clear", for: .normal)
             
-        } else if !text.isEmpty {
+        } else {
             resultLabel.text?.removeAll()
             textField.text?.removeAll()
             
