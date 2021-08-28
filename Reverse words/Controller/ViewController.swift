@@ -40,7 +40,7 @@ class ViewController: UIViewController {
             
             self.button.setTitle(buttonTitle2, for: .normal)
             
-        } else if !result.isEmpty {
+        } else {
             resultLabel.text?.removeAll()
             textField.text?.removeAll()
             
