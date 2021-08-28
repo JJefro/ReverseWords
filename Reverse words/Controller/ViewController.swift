@@ -16,6 +16,8 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var resultLabel: UILabel!
     
+    private let buttonTitle1 = "Reverse"
+    private let buttonTitle2 = "Clear"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,29 +29,28 @@ class ViewController: UIViewController {
         button.setup()
     }
     
-    
     @IBAction func buttonPressed(_ sender: UIButton) {
         guard let text = textField.text else {fatalError()}
-        if button.currentTitle == "Reverse", !text.isEmpty {
+        guard let result = resultLabel.text else {fatalError()}
+        if button.isEnabled, result.isEmpty {
             
             resultLabel.text = reverse(string: text)
             textField.bottomGrayLine.isHidden = false
             textField.bottomBlueLine.isHidden = true
             
-            self.button.setTitle("Clear", for: .normal)
+            self.button.setTitle(buttonTitle2, for: .normal)
             
-        } else if !text.isEmpty {
+        } else if !result.isEmpty {
             resultLabel.text?.removeAll()
             textField.text?.removeAll()
             
             textField.bottomGrayLine.isHidden = true
             
-            self.button.setTitle("Reverse", for: .normal)
+            self.button.setTitle(buttonTitle1, for: .normal)
             button.isEnabled = false
             button.backgroundColor = #colorLiteral(red: 0, green: 0.5694751143, blue: 1, alpha: 0.5)
         }
     }
-    
     
     private func reverse(string: String) -> String {
         return String(string.split(separator: " ").map{ $0.reversed()}.joined(separator: " "))
@@ -62,10 +63,6 @@ class ViewController: UIViewController {
         
         textField.bottomBlueLine.isHidden = false
     }
-    
-    
-
-    
 }
 
 

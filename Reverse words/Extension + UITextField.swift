@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+extension CustomTextField {
+    @objc func myTargetFunction(textField: CustomTextField) {
+        self.bottomBlueLine.isHidden = false
+    }
+}

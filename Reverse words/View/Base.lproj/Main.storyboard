@@ -30,7 +30,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="59" translatesAutoresizingMaskIntoConstraints="NO" id="4Ce-DY-qeP">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="59" translatesAutoresizingMaskIntoConstraints="NO" id="4Ce-DY-qeP" userLabel="TextField">
                                 <rect key="frame" x="16" y="209" width="382" height="134"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This application will reverse your words. Please type text below" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nsh-Nz-gXy">
@@ -49,6 +49,9 @@
                                         </connections>
                                     </textField>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="Lo1-vP-xDB" firstAttribute="centerX" secondItem="4Ce-DY-qeP" secondAttribute="centerX" id="qKN-Nn-Bac"/>
+                                </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eGJ-py-bd8" customClass="Button" customModule="Reverse_words" customModuleProvider="target">
                                 <rect key="frame" x="16" y="774" width="382" height="56"/>
@@ -74,18 +77,18 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="eVa-Dm-R6U" secondAttribute="trailing" constant="16" id="0Gp-AN-hKC"/>
                             <constraint firstItem="1Lf-iB-GhT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="1Sk-wm-vf8"/>
                             <constraint firstItem="4Ce-DY-qeP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="3TH-U8-tfa"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="eGJ-py-bd8" secondAttribute="trailing" constant="16" id="9DX-zg-3Mw"/>
                             <constraint firstItem="eVa-Dm-R6U" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="64" id="ME2-qm-SYE"/>
                             <constraint firstItem="eVa-Dm-R6U" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Muy-Bf-e9l"/>
                             <constraint firstAttribute="bottom" secondItem="eGJ-py-bd8" secondAttribute="bottom" constant="66" id="ShT-hG-5vu"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="eGJ-py-bd8" secondAttribute="trailing" constant="16" id="TfL-oW-Glu"/>
                             <constraint firstAttribute="trailing" secondItem="1Lf-iB-GhT" secondAttribute="trailing" constant="16" id="UaT-K0-ZC7"/>
+                            <constraint firstItem="eVa-Dm-R6U" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="VkX-V6-Us7"/>
                             <constraint firstItem="4Ce-DY-qeP" firstAttribute="top" secondItem="eVa-Dm-R6U" secondAttribute="bottom" constant="16" id="a7c-8D-vD3"/>
                             <constraint firstItem="eGJ-py-bd8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="atg-wv-UYN"/>
                             <constraint firstAttribute="trailing" secondItem="4Ce-DY-qeP" secondAttribute="trailing" constant="16" id="lii-3R-OLZ"/>
-                            <constraint firstItem="1Lf-iB-GhT" firstAttribute="top" secondItem="eVa-Dm-R6U" secondAttribute="bottom" constant="184" id="uD5-ER-EPX"/>
+                            <constraint firstItem="1Lf-iB-GhT" firstAttribute="top" secondItem="4Ce-DY-qeP" secondAttribute="bottom" constant="34" id="uD5-ER-EPX"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Reverse Words" id="tTH-5e-B7h"/>

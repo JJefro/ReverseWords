@@ -6,28 +6,25 @@
 //
 
 import UIKit
+import SnapKit
 
 class CustomTextField: UITextField {
     
-    let bottomBlueLine = CALayer()
-    let bottomGrayLine = CALayer()
+    let bottomBlueLine = UIView()
+    let bottomGrayLine = UIView()
     
     private let screenWidth = UIScreen.main.bounds.width
     
     func setup() {
-        bottomBlueLine.frame = CGRect(x: 0, y: self.frame.height + 19, width: screenWidth - 32, height: 2)
-        bottomBlueLine.backgroundColor = #colorLiteral(red: 0, green: 0.5694751143, blue: 1, alpha: 1)
+   
+        makeLinesConstraints()
         
-        bottomGrayLine.frame = bottomBlueLine.frame
+        bottomBlueLine.backgroundColor = #colorLiteral(red: 0, green: 0.5694751143, blue: 1, alpha: 1)
         bottomGrayLine.backgroundColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
         
         
         //Remove borders
         self.borderStyle = .none
-        
-        //Add layers to UITextField sublayer
-        self.layer.addSublayer(bottomGrayLine)
-        self.layer.addSublayer(bottomBlueLine)
         
         //Hide lines
         bottomGrayLine.isHidden = true
@@ -35,10 +32,23 @@ class CustomTextField: UITextField {
         
         self.addTarget(self, action: #selector(myTargetFunction), for: .touchDown)
     }
-}
-
-extension CustomTextField {
-    @objc func myTargetFunction(textField: CustomTextField) {
-        self.bottomBlueLine.isHidden = false
+    
+    private func makeLinesConstraints() {
+        superview?.addSubview(bottomBlueLine)
+        superview?.addSubview(bottomGrayLine)
+        
+        bottomBlueLine.snp.makeConstraints { make in
+            make.height.equalTo(2)
+            make.top.equalTo(self).inset(41)
+            make.leading.trailing.equalToSuperview()
+        }
+        
+        bottomGrayLine.snp.makeConstraints { make in
+            make.height.equalTo(2)
+            make.top.equalTo(self).inset(41)
+            make.leading.trailing.equalToSuperview()
+        }
     }
+    
+    
 }
