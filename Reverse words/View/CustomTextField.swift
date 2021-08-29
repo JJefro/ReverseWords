@@ -13,8 +13,6 @@ class CustomTextField: UITextField {
     let bottomBlueLine = UIView()
     let bottomGrayLine = UIView()
     
-    private let screenWidth = UIScreen.main.bounds.width
-    
     func setup() {
    
         makeLinesConstraints()
