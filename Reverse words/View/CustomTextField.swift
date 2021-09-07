@@ -13,13 +13,13 @@ class CustomTextField: UITextField {
     let bottomBlueLine = UIView()
     let bottomGrayLine = UIView()
     
+    let ID = "textField"
+    
     func setup() {
-   
         makeLinesConstraints()
         
         bottomBlueLine.backgroundColor = #colorLiteral(red: 0, green: 0.5694751143, blue: 1, alpha: 1)
         bottomGrayLine.backgroundColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
-        
         
         //Remove borders
         self.borderStyle = .none
@@ -29,8 +29,10 @@ class CustomTextField: UITextField {
         bottomBlueLine.isHidden = true
         
         self.addTarget(self, action: #selector(myTargetFunction), for: .touchDown)
+        
+        self.accessibilityIdentifier = ID
     }
-    
+
     private func makeLinesConstraints() {
         superview?.addSubview(bottomBlueLine)
         superview?.addSubview(bottomGrayLine)
@@ -40,13 +42,11 @@ class CustomTextField: UITextField {
             make.top.equalTo(self).inset(41)
             make.leading.trailing.equalToSuperview()
         }
-        
         bottomGrayLine.snp.makeConstraints { make in
             make.height.equalTo(2)
             make.top.equalTo(self).inset(41)
             make.leading.trailing.equalToSuperview()
         }
     }
-    
-    
 }
+

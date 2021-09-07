@@ -9,13 +9,17 @@ import UIKit
 
 class Button: UIButton {
     
+    let ID = "button"
+    
     func setup() {
         self.setTitle("Reverse", for: .normal)
         self.layer.cornerRadius = 14
         self.clipsToBounds = true
+        self.backgroundColor = #colorLiteral(red: 0, green: 0.5694751143, blue: 1, alpha: 1)
         
         self.isEnabled = false
-        self.backgroundColor = #colorLiteral(red: 0, green: 0.5694751143, blue: 1, alpha: 0.5)
+        self.alpha = 0.5
         
+        self.accessibilityIdentifier = ID
     }
 }
