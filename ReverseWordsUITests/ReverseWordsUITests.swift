@@ -37,13 +37,13 @@ class ReverseWordsUITests: XCTestCase {
         XCTAssertTrue(button.exists)
         textField.tap()
         textField.typeText("Reverse")
-        app/*@START_MENU_TOKEN@*/.buttons["Done"]/*[[".keyboards",".buttons[\"done\"]",".buttons[\"Done\"]"],[[[-1,2],[-1,1],[-1,0,1]],[[-1,2],[-1,1]]],[0]]@END_MENU_TOKEN@*/.tap()
+        app.buttons["Done"].tap()
         button.tap()
         button.tap()
         
         textField.tap()
         textField.typeText("Reverse words")
-        app/*@START_MENU_TOKEN@*/.buttons["Done"]/*[[".keyboards",".buttons[\"done\"]",".buttons[\"Done\"]"],[[[-1,2],[-1,1],[-1,0,1]],[[-1,2],[-1,1]]],[0]]@END_MENU_TOKEN@*/.tap()
+        app.buttons["Done"].tap()
         button.tap()
         button.tap()
     }
