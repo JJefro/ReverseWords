@@ -26,10 +26,12 @@ class ReverseWordsUITests: XCTestCase {
 
     func testExample() throws {
         
+        let model = UITestsModel()
+        
         // UI tests must launch the application that they test.
         let app = XCUIApplication()
-        let button = app.buttons.element(matching: .button, identifier: "button")
-        let textField = app.textFields.element(matching: .textField, identifier: "textField")
+        let button = app.buttons.element(matching: .button, identifier: model.buttonID)
+        let textField = app.textFields.element(matching: .textField, identifier: model.textFieldID)
 
         XCTAssertTrue(textField.exists)
         XCTAssertTrue(button.exists)

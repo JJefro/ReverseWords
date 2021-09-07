@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+struct UITestsModel {
+    let buttonID = "button"
+    let textFieldID = "textField"
+}
