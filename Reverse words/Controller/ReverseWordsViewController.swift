@@ -21,8 +21,6 @@ class ReverseWordsViewController: UIViewController, UITextFieldDelegate {
         textField.delegate = self
         textField.returnKeyType = .done
         
-        resultLabel.accessibilityIdentifier = "result"
-        
         //UITexfield settings
         textField.setup()
         
