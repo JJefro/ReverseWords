@@ -13,7 +13,7 @@ class CustomTextField: UITextField {
     let bottomBlueLine = UIView()
     let bottomGrayLine = UIView()
     
-    let ID = "textField"
+    let ID = Accessibility.textField.identifier
     
     func setup() {
         makeLinesConstraints()
