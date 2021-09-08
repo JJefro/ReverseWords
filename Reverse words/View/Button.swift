@@ -10,7 +10,7 @@ import UIKit
 class Button: UIButton {
     
     func setup() {
-        self.setTitle("Reverse", for: .normal)
+        self.setTitle(ButtonTitle.reverse.title, for: .normal)
         self.layer.cornerRadius = 14
         self.clipsToBounds = true
         self.backgroundColor = #colorLiteral(red: 0, green: 0.5694751143, blue: 1, alpha: 1)

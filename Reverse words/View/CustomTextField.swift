@@ -13,6 +13,9 @@ class CustomTextField: UITextField {
     let bottomBlueLine = UIView()
     let bottomGrayLine = UIView()
     
+    private let lineHeight = 2
+    private let lineTopConstraints = 41
+    
     func setup() {
         makeLinesConstraints()
         
@@ -36,13 +39,13 @@ class CustomTextField: UITextField {
         superview?.addSubview(bottomGrayLine)
         
         bottomBlueLine.snp.makeConstraints { make in
-            make.height.equalTo(2)
-            make.top.equalTo(self).inset(41)
+            make.height.equalTo(lineHeight)
+            make.top.equalTo(self).inset(lineTopConstraints)
             make.leading.trailing.equalToSuperview()
         }
         bottomGrayLine.snp.makeConstraints { make in
-            make.height.equalTo(2)
-            make.top.equalTo(self).inset(41)
+            make.height.equalTo(lineHeight)
+            make.top.equalTo(self).inset(lineTopConstraints)
             make.leading.trailing.equalToSuperview()
         }
     }
