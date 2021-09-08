@@ -37,6 +37,7 @@ class ReverseWordsUITests: XCTestCase {
 
         XCTAssertTrue(textField.exists)
         XCTAssertTrue(button.exists)
+        
         textField.tap()
         textField.typeText("Reverse")
         doneButton.tap()

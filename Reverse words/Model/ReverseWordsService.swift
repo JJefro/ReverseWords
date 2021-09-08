@@ -15,13 +15,13 @@ struct ReverseWordsService {
         if button.isEnabled, result.isEmpty {
             
             label.text = reverse(string: text)
-            print(reverse(string: text))
+            
             textField.bottomGrayLine.isHidden = false
             textField.bottomBlueLine.isHidden = true
             textField.isEnabled = false
             
             button.setTitle(ButtonTitle.clear.title, for: .normal)
-            
+    
         } else {
             label.text?.removeAll()
             
