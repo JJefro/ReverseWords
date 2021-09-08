@@ -9,8 +9,6 @@ import UIKit
 
 class Button: UIButton {
     
-//    let ID = Accessibility.button.identifier
-    
     func setup() {
         self.setTitle("Reverse", for: .normal)
         self.layer.cornerRadius = 14
