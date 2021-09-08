@@ -13,8 +13,6 @@ class CustomTextField: UITextField {
     let bottomBlueLine = UIView()
     let bottomGrayLine = UIView()
     
-    let ID = Accessibility.textField.identifier
-    
     func setup() {
         makeLinesConstraints()
         
@@ -30,7 +28,7 @@ class CustomTextField: UITextField {
         
         self.addTarget(self, action: #selector(myTargetFunction), for: .touchDown)
         
-        self.accessibilityIdentifier = ID
+        self.accessibilityIdentifier = Accessibility.textField.identifier
     }
 
     private func makeLinesConstraints() {

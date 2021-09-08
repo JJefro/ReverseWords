@@ -9,7 +9,7 @@ import UIKit
 
 class Button: UIButton {
     
-    let ID = Accessibility.button.identifier
+//    let ID = Accessibility.button.identifier
     
     func setup() {
         self.setTitle("Reverse", for: .normal)
@@ -20,6 +20,6 @@ class Button: UIButton {
         self.isEnabled = false
         self.alpha = 0.5
         
-        self.accessibilityIdentifier = ID
+        self.accessibilityIdentifier = Accessibility.button.identifier
     }
 }
