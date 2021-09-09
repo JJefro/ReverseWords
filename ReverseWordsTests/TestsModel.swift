@@ -5,23 +5,31 @@
 //  Created by Jevgenijs Jefrosinins on 07/09/2021.
 //
 
+// swiftlint:disable all
+
 import Foundation
 
 struct TestsModel {
     
-    let stringInput_1 = "Reverse words"
-    let expectedOutput_1 = "esreveR sdrow"
+    // Single words input and output examples
+    let singleWordInput_1 = "Reverse"
+    let expectedSingleWordOutput_1 = "esreveR"
     
-    let stringInput_2 = "Test string"
-    let expectedOutput_2 = "tseT gnirts"
+    let singleWordInput_2 = "string"
+    let expectedSingleWordOutput_2 = "gnirts"
     
-    let stringInput_3 = "May the force be with you"
-    let expectedOutput_3 = "yaM eht ecrof eb htiw uoy"
+    let singleWordInput_3 = "force"
+    let expectedSingleWordOutput_3 = "ecrof"
     
-    let stringInput_4 = """
-        Blackbird singing in the dead of night Take these broken wings and learn to fly All your life You were only waiting for this moment to arise
-        """
-    let expectedOutput_4 = """
-        dribkcalB gnignis ni eht daed fo thgin ekaT eseht nekorb sgniw dna nrael ot ylf llA ruoy efil uoY erew ylno gnitiaw rof siht tnemom ot esira
-        """
+
+    // Multi-words input and output examples
+    let multiWordsInput_1 = "Blackbird singing"
+    let expectedMultiWordsOutput_1 = "dribkcalB gnignis"
+    
+    let multiWordsInput_2 = "You were only waiting for this moment to arise"
+    let expectedMultiWordsOutput_2 = "uoY erew ylno gnitiaw rof siht tnemom ot esira"
+    
+    let multiWordsInput_3 = "Take these broken wings and learn to fly"
+    let expectedMultiWordsOutput_3 = "ekaT eseht nekorb sgniw dna nrael ot ylf"
+    
 }
