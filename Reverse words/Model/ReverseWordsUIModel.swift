@@ -44,6 +44,5 @@ struct ReverseWordsUIModel {
     
     func editingChanged(button: Button) {
         button.isEnabled = true
-        button.alpha = 1
     }
 }
