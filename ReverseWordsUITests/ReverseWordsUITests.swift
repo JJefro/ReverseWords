@@ -33,6 +33,7 @@ class ReverseWordsUITests: XCTestCase {
         let app = XCUIApplication()
         let button = app.buttons[accessibility.buttonID]
         let textField = app.textFields[accessibility.textFieldID]
+        let result = app.staticTexts.element(matching: .any, identifier: accessibility.resultLabelID)
         let doneButton = app.buttons[accessibility.doneID]
 
         XCTAssertTrue(textField.exists)
@@ -41,11 +42,19 @@ class ReverseWordsUITests: XCTestCase {
         textField.tap()
         textField.typeText("Reverse")
         doneButton.tap()
+        
+        XCTAssertTrue(result.exists)
+        XCTAssertEqual(result.label, "esreveR")
+        
         button.tap()
 
         textField.tap()
         textField.typeText("Reverse words")
         doneButton.tap()
+        
+        XCTAssertTrue(result.exists)
+        XCTAssertEqual(result.label, "esreveR sdrow")
+        
         button.tap()
     }
     

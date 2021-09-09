@@ -18,11 +18,12 @@ class ReverseWordsViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        textField.delegate = self
-        textField.returnKeyType = .done
+        resultLabel.accessibilityIdentifier = Accessibility.label.identifier
         
         //UITexfield settings
         textField.setup()
+        textField.delegate = self
+        textField.returnKeyType = .done
         
         //Button settings
         button.setup()

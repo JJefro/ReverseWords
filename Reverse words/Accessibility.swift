@@ -19,7 +19,7 @@ enum Accessibility {
         case .textField:
             return "textField"
         case .label:
-            return "label"
+            return "result"
         }
     }
 }
