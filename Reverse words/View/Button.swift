@@ -11,19 +11,20 @@ class Button: UIButton {
     
     override var isEnabled: Bool {
         didSet {
-            alpha = isEnabled ? 1 : 0.5
+            self.alpha = isEnabled ? 1 : 0.5
         }
     }
     
-    func setup() {
-        self.setTitle(ButtonTitle.reverse.title, for: .normal)
-        self.layer.cornerRadius = 14
-        self.clipsToBounds = true
-        self.backgroundColor = #colorLiteral(red: 0, green: 0.5694751143, blue: 1, alpha: 1)
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
         
-        self.isEnabled = false
+        setTitle(ButtonTitle.reverse.title, for: .normal)
+        layer.cornerRadius = 14
+        clipsToBounds = true
         
-        self.accessibilityIdentifier = Accessibility.button.identifier
+        isEnabled = false
+        
+        accessibilityIdentifier = Accessibility.button.identifier
     }
 }
 

@@ -15,19 +15,23 @@ class CustomTextField: UITextField {
     private let lineHeight = 2
     private let lineTopConstraints = 41
     
-    func setup() {
-        makeLineConstraints()
-        
-        // Remove borders
-        self.borderStyle = .none
-        
-        bottomLine.backgroundColor = #colorLiteral(red: 0.6321569085, green: 0.6321569085, blue: 0.6321569085, alpha: 1)
-        
-        self.addTarget(self, action: #selector(myTargetFunction), for: .touchDown)
-        self.accessibilityIdentifier = Accessibility.textField.identifier
+    override var isSelected: Bool {
+        didSet {
+            self.bottomLine.backgroundColor = !isSelected ? #colorLiteral(red: 0.6321569085, green: 0.6321569085, blue: 0.6321569085, alpha: 1) : #colorLiteral(red: 0, green: 0.5694751143, blue: 1, alpha: 1)
+        }
     }
     
-    private func makeLineConstraints() {
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+
+        borderStyle = .none
+    
+        bottomLine.backgroundColor = #colorLiteral(red: 0.6321569085, green: 0.6321569085, blue: 0.6321569085, alpha: 1)
+        
+        accessibilityIdentifier = Accessibility.textField.identifier
+    }
+    
+    func makeLineConstraints() {
         superview?.addSubview(bottomLine)
         
         bottomLine.snp.makeConstraints { make in

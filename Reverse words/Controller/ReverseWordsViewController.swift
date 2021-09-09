@@ -13,7 +13,7 @@ class ReverseWordsViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var button: Button!
     @IBOutlet weak var resultLabel: UILabel!
     
-    private var uiModel = ReverseWordsUIModel()
+    private let model = ReverseWordsModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,28 +21,41 @@ class ReverseWordsViewController: UIViewController, UITextFieldDelegate {
         resultLabel.accessibilityIdentifier = Accessibility.label.identifier
         
         // UITexfield settings
-        customTextField.setup()
+        customTextField.makeLineConstraints()
         customTextField.delegate = self
         customTextField.returnKeyType = .done
-        
-        // Button settings
-        button.setup()
     }
     @IBAction func buttonPressed(_ sender: UIButton) {
-        uiModel.reverseWords(label: resultLabel, textField: customTextField, button: button)
+        guard let text = customTextField.text else {fatalError()}
+        guard let result = resultLabel.text else {fatalError()}
+        if button.isEnabled, result.isEmpty {
+            
+            resultLabel.text = model.reverse(string: text)
+            
+            customTextField.isEnabled = false
+            
+            button.setTitle(ButtonTitle.clear.title, for: .normal)
+        } else {
+            resultLabel.text?.removeAll()
+            
+            customTextField.text?.removeAll()
+            customTextField.isEnabled = true
+            
+            button.setTitle(ButtonTitle.reverse.title, for: .normal)
+            button.isEnabled = false
+        }
     }
+    
     @IBAction func editingChanged(_ sender: CustomTextField) {
-        uiModel.editingChanged(button: button)
+        button.isEnabled = true
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        uiModel.textFieldIsActive.toggle()
-        uiModel.changeLineAttribute(textField: customTextField)
+        textField.isSelected = true
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        uiModel.textFieldIsActive.toggle()
-        uiModel.changeLineAttribute(textField: customTextField)
+        textField.isSelected = false
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
