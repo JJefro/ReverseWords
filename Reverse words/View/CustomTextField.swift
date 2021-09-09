@@ -10,7 +10,7 @@ import SnapKit
 
 class CustomTextField: UITextField {
     
-    let bottomLine = UIView()
+    private let bottomLine = UIView()
     
     private let lineHeight = 2
     private let lineTopConstraints = 41
@@ -26,7 +26,7 @@ class CustomTextField: UITextField {
 
         borderStyle = .none
     
-        bottomLine.backgroundColor = #colorLiteral(red: 0.6321569085, green: 0.6321569085, blue: 0.6321569085, alpha: 1)
+        isSelected = false
         
         accessibilityIdentifier = Accessibility.textField.identifier
     }
