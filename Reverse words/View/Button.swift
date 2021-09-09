@@ -21,3 +21,17 @@ class Button: UIButton {
         self.accessibilityIdentifier = Accessibility.button.identifier
     }
 }
+
+enum ButtonTitle {
+    case reverse
+    case clear
+    
+    var title: String {
+        switch self {
+        case .reverse:
+            return "Reverse"
+        case .clear:
+            return "Clear"
+        }
+    }
+}

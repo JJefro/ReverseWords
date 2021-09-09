@@ -27,15 +27,10 @@ class ReverseWordsTests: XCTestCase {
         // Use XCTAssert and related functions to verify your tests produce the correct results.
         let model = TestsModel()
    
-        let result1 = sut.reverse(string: model.stringInput_1)
-        let result2 = sut.reverse(string: model.stringInput_2)
-        let result3 = sut.reverse(string: model.stringInput_3)
-        let result4 = sut.reverse(string: model.stringInput_4)
-        
-        XCTAssertEqual(model.expectedOutput_1, result1)
-        XCTAssertEqual(model.expectedOutput_2, result2)
-        XCTAssertEqual(model.expectedOutput_3, result3)
-        XCTAssertEqual(model.expectedOutput_4, result4)
+        XCTAssertEqual(model.expectedOutput_1, sut.reverse(string: model.stringInput_1))
+        XCTAssertEqual(model.expectedOutput_2, sut.reverse(string: model.stringInput_2))
+        XCTAssertEqual(model.expectedOutput_3, sut.reverse(string: model.stringInput_3))
+        XCTAssertEqual(model.expectedOutput_4, sut.reverse(string: model.stringInput_4))
     }
 
     func testPerformanceExample() throws {
