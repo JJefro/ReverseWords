@@ -10,5 +10,6 @@ import Foundation
 struct UITestsAccessibility {
     let buttonID = "button"
     let textFieldID = "textField"
+    let resultLabelID = "result"
     let doneID = "Done"
 }
