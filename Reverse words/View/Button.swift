@@ -9,6 +9,12 @@ import UIKit
 
 class Button: UIButton {
     
+    override var isEnabled: Bool {
+        didSet {
+            alpha = isEnabled ? 1 : 0.5
+        }
+    }
+    
     func setup() {
         self.setTitle(ButtonTitle.reverse.title, for: .normal)
         self.layer.cornerRadius = 14
@@ -16,7 +22,6 @@ class Button: UIButton {
         self.backgroundColor = #colorLiteral(red: 0, green: 0.5694751143, blue: 1, alpha: 1)
         
         self.isEnabled = false
-        self.alpha = 0.5
         
         self.accessibilityIdentifier = Accessibility.button.identifier
     }

@@ -31,7 +31,6 @@ struct ReverseWordsUIModel {
             
             button.setTitle(ButtonTitle.reverse.title, for: .normal)
             button.isEnabled = false
-            button.alpha = 0.5
         }
     }
     
