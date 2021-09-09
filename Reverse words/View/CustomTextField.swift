@@ -10,44 +10,30 @@ import SnapKit
 
 class CustomTextField: UITextField {
     
-    let bottomBlueLine = UIView()
-    let bottomGrayLine = UIView()
+    let bottomLine = UIView()
     
     private let lineHeight = 2
     private let lineTopConstraints = 41
     
     func setup() {
-        makeLinesConstraints()
+        makeLineConstraints()
         
-        bottomBlueLine.backgroundColor = #colorLiteral(red: 0, green: 0.5694751143, blue: 1, alpha: 1)
-        bottomGrayLine.backgroundColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
-        
-        //Remove borders
+        // Remove borders
         self.borderStyle = .none
         
-        //Hide lines
-        bottomGrayLine.isHidden = true
-        bottomBlueLine.isHidden = true
+        bottomLine.backgroundColor = #colorLiteral(red: 0.6321569085, green: 0.6321569085, blue: 0.6321569085, alpha: 1)
         
         self.addTarget(self, action: #selector(myTargetFunction), for: .touchDown)
-        
         self.accessibilityIdentifier = Accessibility.textField.identifier
     }
-
-    private func makeLinesConstraints() {
-        superview?.addSubview(bottomBlueLine)
-        superview?.addSubview(bottomGrayLine)
+    
+    private func makeLineConstraints() {
+        superview?.addSubview(bottomLine)
         
-        bottomBlueLine.snp.makeConstraints { make in
-            make.height.equalTo(lineHeight)
-            make.top.equalTo(self).inset(lineTopConstraints)
-            make.leading.trailing.equalToSuperview()
-        }
-        bottomGrayLine.snp.makeConstraints { make in
+        bottomLine.snp.makeConstraints { make in
             make.height.equalTo(lineHeight)
             make.top.equalTo(self).inset(lineTopConstraints)
             make.leading.trailing.equalToSuperview()
         }
     }
 }
-

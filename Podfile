@@ -7,5 +7,6 @@ target 'Reverse words' do
 
   # Pods for Reverse words
 pod 'SnapKit', '~> 5.0.0'
+pod 'IQKeyboardManagerSwift'
 
 end

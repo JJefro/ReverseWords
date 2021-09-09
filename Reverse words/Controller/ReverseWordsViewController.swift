@@ -9,30 +9,40 @@ import UIKit
 
 class ReverseWordsViewController: UIViewController, UITextFieldDelegate {
     
-    @IBOutlet weak var textField: CustomTextField!
+    @IBOutlet weak var customTextField: CustomTextField!
     @IBOutlet weak var button: Button!
     @IBOutlet weak var resultLabel: UILabel!
     
-    private let model = ReverseWordsService()
+    private var uiModel = ReverseWordsUIModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         resultLabel.accessibilityIdentifier = Accessibility.label.identifier
         
-        //UITexfield settings
-        textField.setup()
-        textField.delegate = self
-        textField.returnKeyType = .done
+        // UITexfield settings
+        customTextField.setup()
+        customTextField.delegate = self
+        customTextField.returnKeyType = .done
         
-        //Button settings
+        // Button settings
         button.setup()
     }
     @IBAction func buttonPressed(_ sender: UIButton) {
-        model.reverseWords(label: resultLabel, textField: textField, button: button)
+        uiModel.reverseWords(label: resultLabel, textField: customTextField, button: button)
     }
     @IBAction func editingChanged(_ sender: CustomTextField) {
-        model.editingChanged(button: button, textField: textField)
+        uiModel.editingChanged(button: button)
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        uiModel.textFieldIsActive.toggle()
+        uiModel.changeLineAttribute(textField: customTextField)
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        uiModel.textFieldIsActive.toggle()
+        uiModel.changeLineAttribute(textField: customTextField)
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -41,5 +51,3 @@ class ReverseWordsViewController: UIViewController, UITextFieldDelegate {
         return true
     }
 }
-
-

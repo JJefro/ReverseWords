@@ -21,15 +21,15 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
+// swiftlint:disable all
+
 #if os(iOS) || os(tvOS)
     import UIKit
 #else
     import AppKit
 #endif
 
-
 public class ConstraintDescription {
-    
     internal let item: LayoutConstraintItem
     internal var attributes: ConstraintAttributes
     internal var relation: ConstraintRelation? = nil
@@ -46,7 +46,6 @@ public class ConstraintDescription {
             return nil
         }
         let from = ConstraintItem(target: self.item, attributes: self.attributes)
-        
         return Constraint(
             from: from,
             to: related,
@@ -58,12 +57,9 @@ public class ConstraintDescription {
             priority: self.priority
         )
     }()
-    
     // MARK: Initialization
-    
     internal init(item: LayoutConstraintItem, attributes: ConstraintAttributes) {
         self.item = item
         self.attributes = attributes
     }
-    
 }
