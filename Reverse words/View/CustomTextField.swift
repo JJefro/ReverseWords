@@ -17,7 +17,9 @@ class CustomTextField: UITextField {
     
     override var isSelected: Bool {
         didSet {
-            self.bottomLine.backgroundColor = !isSelected ? #colorLiteral(red: 0.6321569085, green: 0.6321569085, blue: 0.6321569085, alpha: 1) : #colorLiteral(red: 0, green: 0.5694751143, blue: 1, alpha: 1)
+            UIView.animate(withDuration: 0.6, delay: 0, options: .allowUserInteraction, animations: { [self] in
+                bottomLine.backgroundColor = !isSelected ? #colorLiteral(red: 0.6321569085, green: 0.6321569085, blue: 0.6321569085, alpha: 1) : #colorLiteral(red: 0, green: 0.5694751143, blue: 1, alpha: 1)
+            }, completion: nil)
         }
     }
     

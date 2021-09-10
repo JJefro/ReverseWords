@@ -11,7 +11,9 @@ class Button: CardButtonStyle {
     
     override var isEnabled: Bool {
         didSet {
-            self.alpha = isEnabled ? 1 : 0.5
+            UIView.animate(withDuration: 0.5, delay: 0, options: .allowUserInteraction, animations: { [self] in
+                alpha = isEnabled ? 1 : 0.5
+            }, completion: nil)
         }
     }
         
