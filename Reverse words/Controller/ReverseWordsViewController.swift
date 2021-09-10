@@ -25,7 +25,9 @@ class ReverseWordsViewController: UIViewController, UITextFieldDelegate {
         customTextField.delegate = self
         customTextField.returnKeyType = .done
     }
-    @IBAction func buttonPressed(_ sender: UIButton) {
+    
+    @IBAction func buttonPressed(_ sender: Button) {
+        print("button pressed")
         guard let text = customTextField.text else {fatalError()}
         guard let result = resultLabel.text else {fatalError()}
         if button.isEnabled, result.isEmpty {

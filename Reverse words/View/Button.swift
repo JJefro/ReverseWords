@@ -7,14 +7,14 @@
 
 import UIKit
 
-class Button: UIButton {
+class Button: CardButtonStyle {
     
     override var isEnabled: Bool {
         didSet {
             self.alpha = isEnabled ? 1 : 0.5
         }
     }
-    
+        
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
