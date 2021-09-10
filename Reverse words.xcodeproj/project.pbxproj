@@ -24,7 +24,7 @@
 		97A8E13826E1F8C100123971 /* ReverseWordsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A8E13726E1F8C100123971 /* ReverseWordsTests.swift */; };
 		97A8E14626E1F8D800123971 /* ReverseWordsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A8E14526E1F8D800123971 /* ReverseWordsUITests.swift */; };
 		97BE2F7726EA42DA007E12D5 /* ReverseWordsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BE2F7626EA42DA007E12D5 /* ReverseWordsModel.swift */; };
-		97C28ADA26E7E0AB00421CA3 /* UITestsAccessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C28AD926E7E0AB00421CA3 /* UITestsAccessibility.swift */; };
+		97C28ADA26E7E0AB00421CA3 /* UITestsAccessibilityIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C28AD926E7E0AB00421CA3 /* UITestsAccessibilityIdentifiers.swift */; };
 		97C28ADC26E7EF6D00421CA3 /* Accessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C28ADB26E7EF6D00421CA3 /* Accessibility.swift */; };
 		FDFAC1375C221CA6A30F166B /* Pods_Reverse_words.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F421E80DBDCD9B0938C98FF /* Pods_Reverse_words.framework */; };
 /* End PBXBuildFile section */
@@ -72,7 +72,7 @@
 		97A8E14526E1F8D800123971 /* ReverseWordsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReverseWordsUITests.swift; sourceTree = "<group>"; };
 		97A8E14726E1F8D800123971 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		97BE2F7626EA42DA007E12D5 /* ReverseWordsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReverseWordsModel.swift; sourceTree = "<group>"; };
-		97C28AD926E7E0AB00421CA3 /* UITestsAccessibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITestsAccessibility.swift; sourceTree = "<group>"; };
+		97C28AD926E7E0AB00421CA3 /* UITestsAccessibilityIdentifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITestsAccessibilityIdentifiers.swift; sourceTree = "<group>"; };
 		97C28ADB26E7EF6D00421CA3 /* Accessibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Accessibility.swift; sourceTree = "<group>"; };
 		CA929C1F0BE618565F815842 /* Pods-Reverse words.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reverse words.debug.xcconfig"; path = "Target Support Files/Pods-Reverse words/Pods-Reverse words.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -193,7 +193,7 @@
 			isa = PBXGroup;
 			children = (
 				97A8E14526E1F8D800123971 /* ReverseWordsUITests.swift */,
-				97C28AD926E7E0AB00421CA3 /* UITestsAccessibility.swift */,
+				97C28AD926E7E0AB00421CA3 /* UITestsAccessibilityIdentifiers.swift */,
 				97A8E14726E1F8D800123971 /* Info.plist */,
 			);
 			path = ReverseWordsUITests;
@@ -446,7 +446,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				97A8E14626E1F8D800123971 /* ReverseWordsUITests.swift in Sources */,
-				97C28ADA26E7E0AB00421CA3 /* UITestsAccessibility.swift in Sources */,
+				97C28ADA26E7E0AB00421CA3 /* UITestsAccessibilityIdentifiers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

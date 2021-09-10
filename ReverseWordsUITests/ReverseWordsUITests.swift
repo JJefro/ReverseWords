@@ -10,51 +10,54 @@ import XCTest
 
 class ReverseWordsUITests: XCTestCase {
     
-    let accessibility = UITestsAccessibility()
+    let accessibilityIdentifier = UITestsAccessibilityIdentifiers()
+    
+    var app: XCUIApplication!
+    var reverseButton: XCUIElement!
+    var textField: XCUIElement!
+    var resultLabel: XCUIElement!
+    var doneButton: XCUIElement!
     
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
         
-        // In UI tests it is usually best to stop immediately when a failure occurs.
         continueAfterFailure = false
+        self.app = XCUIApplication()
+        self.app.launch()
         
-        XCUIApplication().launch()
-        // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
+        self.reverseButton = app.buttons[accessibilityIdentifier.reverseButton]
+        self.textField = app.textFields[accessibilityIdentifier.textField]
+        self.resultLabel = app.staticTexts.element(matching: .any, identifier: accessibilityIdentifier.resultLabel)
+        self.doneButton = app.buttons[accessibilityIdentifier.doneButton]
     }
     
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
     
-    func testExample() throws {
-
-        // UI tests must launch the application that they test.
-        let app = XCUIApplication()
-        let button = app.buttons[accessibility.buttonID]
-        let textField = app.textFields[accessibility.textFieldID]
-        let result = app.staticTexts.element(matching: .any, identifier: accessibility.resultLabelID)
-        let doneButton = app.buttons[accessibility.doneID]
-
+    func testThePresenceOfElements() throws {
         XCTAssertTrue(textField.exists)
-        XCTAssertTrue(button.exists)
-        
+        XCTAssertTrue(reverseButton.exists)
+        textField.tap()
+        textField.typeText("Corona")
+        XCTAssertTrue(doneButton.exists)
+        doneButton.tap()
+        XCTAssertTrue(resultLabel.exists)
+    }
+    
+    func testSingleWordReversing() throws {
         textField.tap()
         textField.typeText("Reverse")
         doneButton.tap()
-        
-        XCTAssertTrue(result.exists)
-        XCTAssertEqual(result.label, "esreveR")
-        
-        button.tap()
-
+        XCTAssertEqual(resultLabel.label, "esreveR")
+        reverseButton.tap()
+    }
+    
+    func testMultiWordsReversing() throws {
         textField.tap()
         textField.typeText("Reverse words")
         doneButton.tap()
-        
-        XCTAssertTrue(result.exists)
-        XCTAssertEqual(result.label, "esreveR sdrow")
-        
-        button.tap()
+        XCTAssertEqual(resultLabel.label, "esreveR sdrow")
+        reverseButton.tap()
     }
     
     func testLaunchPerformance() throws {
