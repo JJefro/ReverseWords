@@ -21,9 +21,8 @@ class Button: CardButtonStyle {
         setTitle(ButtonTitle.reverse.title, for: .normal)
         layer.cornerRadius = 14
         clipsToBounds = true
-        
         isEnabled = false
-        
+
         accessibilityIdentifier = Accessibility.button.identifier
     }
 }

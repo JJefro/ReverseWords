@@ -27,11 +27,10 @@ class ReverseWordsViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func buttonPressed(_ sender: Button) {
-        print("button pressed")
+
         guard let text = customTextField.text else {fatalError()}
         guard let result = resultLabel.text else {fatalError()}
         if button.isEnabled, result.isEmpty {
-            
             resultLabel.text = model.reverse(string: text)
             
             customTextField.isEnabled = false
@@ -39,8 +38,8 @@ class ReverseWordsViewController: UIViewController, UITextFieldDelegate {
             button.setTitle(ButtonTitle.clear.title, for: .normal)
         } else {
             resultLabel.text?.removeAll()
-            
             customTextField.text?.removeAll()
+            
             customTextField.isEnabled = true
             
             button.setTitle(ButtonTitle.reverse.title, for: .normal)
@@ -52,6 +51,7 @@ class ReverseWordsViewController: UIViewController, UITextFieldDelegate {
         button.isEnabled = true
     }
     
+    // MARK: - UITextFieldDelegate
     func textFieldDidBeginEditing(_ textField: UITextField) {
         textField.isSelected = true
     }

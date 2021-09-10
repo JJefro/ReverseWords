@@ -25,9 +25,7 @@ class CustomTextField: UITextField {
         super.init(coder: aDecoder)
 
         borderStyle = .none
-    
         isSelected = false
-        
         accessibilityIdentifier = Accessibility.textField.identifier
     }
     
