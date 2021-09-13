@@ -7,13 +7,13 @@
 
 import UIKit
 
-class ReverseWordsViewController: UIViewController, UITextFieldDelegate, UIScrollViewDelegate {
+class ReverseWordsViewController: UIViewController {
     
-    @IBOutlet weak var customTextField: CustomTextField!
-    @IBOutlet weak var textField2: CustomTextField!
-    @IBOutlet weak var button: Button!
+    @IBOutlet weak var topTextField: CustomTextField!
+    @IBOutlet weak var bottomTextField: CustomTextField!
+    @IBOutlet weak var resultButton: Button!
     @IBOutlet weak var resultLabel: UILabel!
-    @IBOutlet weak var secondLabel: UILabel!
+    @IBOutlet weak var bottomLabel: UILabel!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var scrollView: UIScrollView!
     
@@ -25,10 +25,16 @@ class ReverseWordsViewController: UIViewController, UITextFieldDelegate, UIScrol
         scrollView.delegate = self
         
         // UITexfield settings
-        customTextField.delegate = self
-        customTextField.returnKeyType = .done
-        textField2.delegate = self
-        textField2.returnKeyType = .done
+        topTextField.delegate = self
+        bottomTextField.delegate = self
+        
+        topTextField.returnKeyType = .done
+        bottomTextField.returnKeyType = .done
+    }
+    
+    override func viewWillLayoutSubviews() {
+        topTextField.makeLineConstraints()
+        bottomTextField.makeLineConstraints()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -36,67 +42,35 @@ class ReverseWordsViewController: UIViewController, UITextFieldDelegate, UIScrol
         
         resultLabel.accessibilityIdentifier = Accessibility.label.identifier
         resultLabel.text?.removeAll()
-        textField2.isHidden = true
-    }
-    
-    override func viewWillLayoutSubviews() {
-        customTextField.makeLineConstraints()
-        textField2.makeLineConstraints()
+        bottomTextField.isHidden = true
     }
     
     @IBAction func buttonPressed(_ sender: Button) {
-        guard let text = customTextField.text else {fatalError()}
+        guard let text = topTextField.text else {fatalError()}
         guard let result = resultLabel.text else {fatalError()}
-        if button.isEnabled, result.isEmpty {
+        if resultButton.isEnabled, result.isEmpty {
             resultLabel.text = model.reverse(string: text)
             
-            customTextField.isEnabled = false
+            topTextField.isEnabled = false
             
-            button.setTitle(ButtonTitle.clear.title, for: .normal)
+            resultButton.setTitle(ButtonTitle.clear.title, for: .normal)
         } else {
             resultLabel.text?.removeAll()
-            customTextField.text?.removeAll()
+            topTextField.text?.removeAll()
             
-            customTextField.isEnabled = true
+            topTextField.isEnabled = true
             
-            button.setTitle(ButtonTitle.reverse.title, for: .normal)
-            button.isEnabled = false
+            resultButton.setTitle(ButtonTitle.reverse.title, for: .normal)
+            resultButton.isEnabled = false
         }
     }
     
     @IBAction func segmentAction(_ sender: UISegmentedControl) {
-        secondLabel.isHidden.toggle()
-        textField2.isHidden.toggle()
+        bottomLabel.isHidden.toggle()
+        bottomTextField.isHidden.toggle()
     }
     
     @IBAction func editingChanged(_ sender: CustomTextField) {
-        button.isEnabled = true
-    }
-    
-    // MARK: - UITextFieldDelegate
-    
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        textField.isSelected = true
-    }
-    
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        textField.isSelected = false
-    }
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        buttonPressed(button)
-        return true
-    }
-    
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        resultLabel.text = textField2.text
-        return true
-    }
-    
-    // MARK: - UIScrollViewDelegate
-    
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        scrollView.contentOffset.x = 0
+        resultButton.isEnabled = true
     }
 }

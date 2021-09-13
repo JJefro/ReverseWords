@@ -10,6 +10,6 @@ import Foundation
 struct ReverseWordsModel {
     
     func reverse(string: String) -> String {
-        return String(string.split(separator: " ").map { $0.reversed()}.joined(separator: " "))
+        return String(string.split(separator: " ").map { $0.reversed() }.joined(separator: " "))
     }
 }
