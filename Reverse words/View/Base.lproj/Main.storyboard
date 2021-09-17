@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Kq4-UN-80o">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -20,32 +21,32 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ReverseWordsViewController" customModule="Reverse_words" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" userLabel="ReverseWordsView">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tKY-Fh-XTM">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yc5-wK-s56">
-                                        <rect key="frame" x="0.0" y="0.0" width="611.5" height="812"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="422" height="812"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reverse Words" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eVa-Dm-R6U">
-                                                <rect key="frame" x="191" y="64" width="230" height="40"/>
+                                                <rect key="frame" x="95.5" y="64" width="231.5" height="41"/>
                                                 <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="34"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="4Ce-DY-qeP" userLabel="TextField">
-                                                <rect key="frame" x="18" y="125" width="568.5" height="299"/>
+                                                <rect key="frame" x="18" y="125" width="379" height="320.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This application will reverse your words. Please type text below" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nsh-Nz-gXy">
-                                                        <rect key="frame" x="0.0" y="0.0" width="568.5" height="20"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="379" height="41"/>
                                                         <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="17"/>
                                                         <color key="textColor" red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59951636904761907" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Text to reverse" clearsOnBeginEditing="YES" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Lo1-vP-xDB" customClass="CustomTextField" customModule="Reverse_words" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="60" width="568.5" height="34"/>
+                                                        <rect key="frame" x="0.0" y="81" width="379" height="34"/>
                                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <accessibility key="accessibilityConfiguration">
                                                             <accessibilityTraits key="traits" keyboardKey="YES"/>
@@ -57,22 +58,23 @@
                                                         </connections>
                                                     </textField>
                                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="u2o-2a-0OK">
-                                                        <rect key="frame" x="0.0" y="134" width="568.5" height="32"/>
+                                                        <rect key="frame" x="0.0" y="155" width="379" height="32"/>
                                                         <segments>
                                                             <segment title="Default"/>
                                                             <segment title="Custom"/>
+                                                            <segment title="Extra"/>
                                                         </segments>
                                                         <connections>
                                                             <action selector="segmentAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="aYi-v6-Hn3"/>
                                                         </connections>
                                                     </segmentedControl>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Text to ignore" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="S7E-ll-yJh" customClass="CustomTextField" customModule="Reverse_words" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="205" width="568.5" height="34"/>
+                                                        <rect key="frame" x="0.0" y="226" width="379" height="34"/>
                                                         <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="17"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="All characters except alphabetic symbols" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WYX-e5-wGe">
-                                                        <rect key="frame" x="0.0" y="279" width="568.5" height="20"/>
+                                                        <rect key="frame" x="0.0" y="300" width="379" height="20.5"/>
                                                         <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="17"/>
                                                         <color key="textColor" white="0.63215690560000004" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
@@ -83,7 +85,7 @@
                                                 </constraints>
                                             </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eGJ-py-bd8" customClass="Button" customModule="Reverse_words" customModuleProvider="target">
-                                                <rect key="frame" x="134.5" y="716" width="343" height="56"/>
+                                                <rect key="frame" x="39.5" y="716" width="343" height="56"/>
                                                 <color key="backgroundColor" red="0.0" green="0.47843137254901957" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="56" id="SFj-C6-aRk"/>
@@ -98,7 +100,7 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="result" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Lf-iB-GhT">
-                                                <rect key="frame" x="16" y="464" width="571.5" height="28"/>
+                                                <rect key="frame" x="16" y="485.5" width="382" height="29"/>
                                                 <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="24"/>
                                                 <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -142,8 +144,8 @@
                     </view>
                     <navigationItem key="navigationItem" title="Reverse Words" id="tTH-5e-B7h"/>
                     <connections>
-                        <outlet property="bottomLabel" destination="WYX-e5-wGe" id="7bU-MH-MuC"/>
                         <outlet property="bottomTextField" destination="S7E-ll-yJh" id="84e-0G-P94"/>
+                        <outlet property="descriptionLabel" destination="WYX-e5-wGe" id="7bU-MH-MuC"/>
                         <outlet property="resultButton" destination="eGJ-py-bd8" id="y5j-NO-n16"/>
                         <outlet property="resultLabel" destination="1Lf-iB-GhT" id="0YL-vz-HZB"/>
                         <outlet property="scrollView" destination="tKY-Fh-XTM" id="QYb-PJ-oLV"/>

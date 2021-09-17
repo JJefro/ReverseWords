@@ -13,6 +13,8 @@
 		97104EFA26D6898500B472EF /* SF-Pro-Display-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 97104EF926D6898500B472EF /* SF-Pro-Display-Light.otf */; };
 		97104EFC26D6898D00B472EF /* SF-Pro-Display-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 97104EFB26D6898D00B472EF /* SF-Pro-Display-Regular.otf */; };
 		97104EFE26D6F74A00B472EF /* SF-Pro-Display-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 97104EFD26D6F74A00B472EF /* SF-Pro-Display-Semibold.otf */; };
+		9717447E26F4651D00D57187 /* Extension + String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9717447D26F4651D00D57187 /* Extension + String.swift */; };
+		9717448026F4663300D57187 /* ReverseWordsSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9717447F26F4663300D57187 /* ReverseWordsSettings.swift */; };
 		975893FC26EFCA72000977C7 /* Extension + ReverseWordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975893FB26EFCA72000977C7 /* Extension + ReverseWordsViewController.swift */; };
 		97A2887626D676CD00058D3F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A2887526D676CD00058D3F /* AppDelegate.swift */; };
 		97A2887826D676CD00058D3F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A2887726D676CD00058D3F /* SceneDelegate.swift */; };
@@ -56,6 +58,8 @@
 		97104EF926D6898500B472EF /* SF-Pro-Display-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Light.otf"; sourceTree = "<group>"; };
 		97104EFB26D6898D00B472EF /* SF-Pro-Display-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Regular.otf"; sourceTree = "<group>"; };
 		97104EFD26D6F74A00B472EF /* SF-Pro-Display-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Semibold.otf"; sourceTree = "<group>"; };
+		9717447D26F4651D00D57187 /* Extension + String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + String.swift"; sourceTree = "<group>"; };
+		9717447F26F4663300D57187 /* ReverseWordsSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReverseWordsSettings.swift; sourceTree = "<group>"; };
 		975893FB26EFCA72000977C7 /* Extension + ReverseWordsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + ReverseWordsViewController.swift"; sourceTree = "<group>"; };
 		97A2887226D676CD00058D3F /* Reverse words.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Reverse words.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		97A2887526D676CD00058D3F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -146,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				975893FB26EFCA72000977C7 /* Extension + ReverseWordsViewController.swift */,
+				9717447D26F4651D00D57187 /* Extension + String.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -214,6 +219,7 @@
 			isa = PBXGroup;
 			children = (
 				97BE2F7626EA42DA007E12D5 /* ReverseWordsModel.swift */,
+				9717447F26F4663300D57187 /* ReverseWordsSettings.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -435,11 +441,13 @@
 			files = (
 				97A4901C26D96BB900849A7A /* Button.swift in Sources */,
 				97A4901A26D968AC00849A7A /* CustomTextField.swift in Sources */,
+				9717447E26F4651D00D57187 /* Extension + String.swift in Sources */,
 				97BE2F7726EA42DA007E12D5 /* ReverseWordsModel.swift in Sources */,
 				97A2887A26D676CD00058D3F /* ReverseWordsViewController.swift in Sources */,
 				97A2887626D676CD00058D3F /* AppDelegate.swift in Sources */,
 				97C28ADC26E7EF6D00421CA3 /* Accessibility.swift in Sources */,
 				97A2887826D676CD00058D3F /* SceneDelegate.swift in Sources */,
+				9717448026F4663300D57187 /* ReverseWordsSettings.swift in Sources */,
 				975893FC26EFCA72000977C7 /* Extension + ReverseWordsViewController.swift in Sources */,
 				970DB57026EB495D003AFBA2 /* CardButtonStyle.swift in Sources */,
 			);

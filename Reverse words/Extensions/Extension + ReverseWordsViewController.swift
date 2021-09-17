@@ -24,7 +24,9 @@ extension ReverseWordsViewController: UITextFieldDelegate {
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        resultLabel.text = bottomTextField.text
+        if let text = bottomTextField.text {
+            model.exceptionElements = text
+        }
         return true
     }
 }
