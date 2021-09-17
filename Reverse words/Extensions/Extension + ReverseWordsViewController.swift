@@ -19,14 +19,6 @@ extension ReverseWordsViewController: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
-        buttonPressed(resultButton)
-        return true
-    }
-    
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        if let text = bottomTextField.text {
-            model.exceptionElements = text
-        }
         return true
     }
 }

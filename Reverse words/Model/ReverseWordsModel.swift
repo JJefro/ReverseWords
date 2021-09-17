@@ -14,12 +14,12 @@ struct ReverseWordsModel {
     
     func reverse(string: String) -> String {
         let words = string.components(separatedBy: " ")
-        var result = String()
+        var result = [String]()
         
         for word in words {
-            result.append("\(rearrangeWord(word)) ")
+            result.append(rearrangeWord(word))
         }
-        return result
+        return String(result.joined(separator: " "))
     }
     
     private func rearrangeWord(_ word: String) -> String {

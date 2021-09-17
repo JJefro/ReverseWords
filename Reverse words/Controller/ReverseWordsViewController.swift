@@ -18,50 +18,52 @@ class ReverseWordsViewController: UIViewController {
     @IBOutlet weak var scrollView: UIScrollView!
     
     var model = ReverseWordsModel()
-  
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
         scrollView.delegate = self
         
         resultLabel.text?.removeAll()
-        resultLabel.accessibilityIdentifier = Accessibility.label.identifier
-        
+
+        // Accessibility identifiers
+        resultLabel.accessibilityIdentifier = Accessibility.resultLabel.identifier
+        topTextField.accessibilityIdentifier = Accessibility.topTextField.identifier
+        bottomTextField.accessibilityIdentifier = Accessibility.bottomTextField.identifier
+        segmentedControl.accessibilityIdentifier = Accessibility.segmentedControl.identifier
+
         // UITexfield settings
         topTextField.makeLineConstraints()
         topTextField.delegate = self
-        topTextField.returnKeyType = .done
-        
+        topTextField.returnKeyType = .default
+
         bottomTextField.makeLineConstraints()
         bottomTextField.delegate = self
-        bottomTextField.returnKeyType = .done
+        bottomTextField.returnKeyType = .default
         bottomTextField.isHidden = true
     }
     
     @IBAction func buttonPressed(_ sender: Button) {
         guard let text = topTextField.text else {return}
-        guard let result = resultLabel.text else {return}
-        if resultButton.isEnabled, result.isEmpty {
+        if resultButton.isEnabled, resultButton.isReverseTitle {
+
             resultLabel.text = model.reverse(string: text)
-            
             topTextField.isEnabled = false
-            
-            resultButton.setTitle(ButtonTitle.clear.title, for: .normal)
+            bottomTextField.isEnabled = false
+            resultButton.isReverseTitle = false
         } else {
             resultLabel.text?.removeAll()
             topTextField.text?.removeAll()
             bottomTextField.text?.removeAll()
-            
+
+            resultButton.isReverseTitle = true
             topTextField.isEnabled = true
-            bottomTextField.isEnabled = false
+            bottomTextField.isEnabled = true
             resultButton.isEnabled = false
-            
-            resultButton.setTitle(ButtonTitle.reverse.title, for: .normal)
         }
     }
     
     @IBAction func segmentAction(_ sender: UISegmentedControl) {
-        resultButton.setTitle(ButtonTitle.reverse.title, for: .normal)
         resultLabel.text?.removeAll()
         switch sender.selectedSegmentIndex {
         case 0:
@@ -76,13 +78,34 @@ class ReverseWordsViewController: UIViewController {
             resultButton.isHidden = false
         case 2:
             model.settings = .extraSettings
+            descriptionLabel.isHidden = true
             resultButton.isHidden = true
+            bottomTextField.isHidden = false
+            updateResultLabel()
         default:
             break
         }
     }
-    
-    @IBAction func editingChanged(_ sender: CustomTextField) {
+
+    @IBAction func topTextFieldEditingChanged(_ sender: CustomTextField) {
         resultButton.isEnabled = true
+        if model.settings == .extraSettings {
+            updateResultLabel()
+        }
+    }
+
+    @IBAction func bottomTextFieldEditingChanged(_ sender: CustomTextField) {
+        guard let text = bottomTextField.text else {return}
+        model.exceptionElements = text
+        if model.settings == .extraSettings {
+            updateResultLabel()
+        } else {
+            resultButton.isReverseTitle = true
+        }
+    }
+
+    private func updateResultLabel() {
+        guard let text = topTextField.text else {return}
+        resultLabel.text = model.reverse(string: text)
     }
 }

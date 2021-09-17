@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		970DB57026EB495D003AFBA2 /* CardButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970DB56F26EB495D003AFBA2 /* CardButtonStyle.swift */; };
+		970DB57026EB495D003AFBA2 /* CardButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970DB56F26EB495D003AFBA2 /* CardButton.swift */; };
 		97104EF626D6897100B472EF /* SF-Pro-Display-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 97104EF526D6897100B472EF /* SF-Pro-Display-Black.otf */; };
 		97104EF826D6897B00B472EF /* SF-Pro-Display-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 97104EF726D6897B00B472EF /* SF-Pro-Display-Bold.otf */; };
 		97104EFA26D6898500B472EF /* SF-Pro-Display-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 97104EF926D6898500B472EF /* SF-Pro-Display-Light.otf */; };
@@ -52,7 +52,7 @@
 /* Begin PBXFileReference section */
 		3C95CD9E605346E7951D78E3 /* Pods-Reverse words.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reverse words.release.xcconfig"; path = "Target Support Files/Pods-Reverse words/Pods-Reverse words.release.xcconfig"; sourceTree = "<group>"; };
 		6F421E80DBDCD9B0938C98FF /* Pods_Reverse_words.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Reverse_words.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		970DB56F26EB495D003AFBA2 /* CardButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardButtonStyle.swift; sourceTree = "<group>"; };
+		970DB56F26EB495D003AFBA2 /* CardButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardButton.swift; sourceTree = "<group>"; };
 		97104EF526D6897100B472EF /* SF-Pro-Display-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Black.otf"; sourceTree = "<group>"; };
 		97104EF726D6897B00B472EF /* SF-Pro-Display-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Bold.otf"; sourceTree = "<group>"; };
 		97104EF926D6898500B472EF /* SF-Pro-Display-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Light.otf"; sourceTree = "<group>"; };
@@ -129,7 +129,7 @@
 		970DB56E26EB4912003AFBA2 /* CustomControls */ = {
 			isa = PBXGroup;
 			children = (
-				970DB56F26EB495D003AFBA2 /* CardButtonStyle.swift */,
+				970DB56F26EB495D003AFBA2 /* CardButton.swift */,
 			);
 			path = CustomControls;
 			sourceTree = "<group>";
@@ -449,7 +449,7 @@
 				97A2887826D676CD00058D3F /* SceneDelegate.swift in Sources */,
 				9717448026F4663300D57187 /* ReverseWordsSettings.swift in Sources */,
 				975893FC26EFCA72000977C7 /* Extension + ReverseWordsViewController.swift in Sources */,
-				970DB57026EB495D003AFBA2 /* CardButtonStyle.swift in Sources */,
+				970DB57026EB495D003AFBA2 /* CardButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

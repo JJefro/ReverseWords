@@ -54,7 +54,7 @@
                                                         <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="18"/>
                                                         <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                                         <connections>
-                                                            <action selector="editingChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="YRc-sR-xDK"/>
+                                                            <action selector="topTextFieldEditingChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="YRc-sR-xDK"/>
                                                         </connections>
                                                     </textField>
                                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="u2o-2a-0OK">
@@ -72,6 +72,9 @@
                                                         <rect key="frame" x="0.0" y="226" width="379" height="34"/>
                                                         <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="17"/>
                                                         <textInputTraits key="textInputTraits"/>
+                                                        <connections>
+                                                            <action selector="bottomTextFieldEditingChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="YRb-Ns-fYc"/>
+                                                        </connections>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="All characters except alphabetic symbols" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WYX-e5-wGe">
                                                         <rect key="frame" x="0.0" y="300" width="379" height="20.5"/>
@@ -182,6 +185,11 @@
             <point key="canvasLocation" x="95.652173913043484" y="76.339285714285708"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="eGJ-py-bd8">
+            <size key="intrinsicContentSize" width="48" height="33"/>
+        </designable>
+    </designables>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

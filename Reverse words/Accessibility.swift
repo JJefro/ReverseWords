@@ -8,18 +8,24 @@
 import Foundation
 
 enum Accessibility {
-    case button
-    case textField
-    case label
-    
+    case resultButton
+    case topTextField
+    case bottomTextField
+    case resultLabel
+    case segmentedControl
+
     var identifier: String {
         switch self {
-        case .button:
-            return "button"
-        case .textField:
-            return "textField"
-        case .label:
+        case .resultButton:
+            return "resultButton"
+        case .topTextField:
+            return "topTextField"
+        case .bottomTextField:
+            return "bottomTextField"
+        case .resultLabel:
             return "result"
+        case .segmentedControl:
+            return "segmentedControl"
         }
     }
 }

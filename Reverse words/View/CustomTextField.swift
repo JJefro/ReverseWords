@@ -34,7 +34,6 @@ class CustomTextField: UITextField {
 
         borderStyle = .none
         isSelected = false
-        accessibilityIdentifier = Accessibility.textField.identifier
     }
     
     func makeLineConstraints() {

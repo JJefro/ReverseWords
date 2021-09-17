@@ -13,21 +13,32 @@ class ReverseWordsUITests: XCTestCase {
     let accessibilityIdentifier = UITestsAccessibilityIdentifiers()
     
     var app: XCUIApplication!
-    var reverseButton: XCUIElement!
-    var textField: XCUIElement!
+    var resultButton: XCUIElement!
+    var topTextField: XCUIElement!
+    var bottomTextField: XCUIElement!
     var resultLabel: XCUIElement!
-    var doneButton: XCUIElement!
+    var returnButton: XCUIElement!
+    var segmentedControl: XCUIElement!
+    var defalutButton: XCUIElement!
+    var customButton: XCUIElement!
+    var extraButton: XCUIElement!
     
     override func setUpWithError() throws {
         
         continueAfterFailure = false
         self.app = XCUIApplication()
         self.app.launch()
+        let elementsQuery = app.scrollViews
         
-        self.reverseButton = app.buttons[accessibilityIdentifier.reverseButton]
-        self.textField = app.textFields[accessibilityIdentifier.textField]
+        self.resultButton = app.buttons[accessibilityIdentifier.resultButton]
+        self.topTextField = app.textFields[accessibilityIdentifier.topTextField]
+        self.bottomTextField = app.textFields[accessibilityIdentifier.bottomTextField]
         self.resultLabel = app.staticTexts.element(matching: .any, identifier: accessibilityIdentifier.resultLabel)
-        self.doneButton = app.buttons[accessibilityIdentifier.doneButton]
+        self.returnButton = app.buttons[accessibilityIdentifier.returnButton]
+        self.segmentedControl = app.segmentedControls[accessibilityIdentifier.segmentedControl]
+        self.defalutButton = elementsQuery.buttons[accessibilityIdentifier.defaultButton]
+        self.customButton = elementsQuery.buttons[accessibilityIdentifier.customButton]
+        self.extraButton = elementsQuery.buttons[accessibilityIdentifier.extraButton]
     }
     
     override func tearDownWithError() throws {
@@ -35,29 +46,87 @@ class ReverseWordsUITests: XCTestCase {
     }
     
     func testThePresenceOfElements() throws {
-        XCTAssertTrue(textField.exists)
-        XCTAssertTrue(reverseButton.exists)
-        textField.tap()
-        textField.typeText("Corona")
-        XCTAssertTrue(doneButton.exists)
-        doneButton.tap()
+        XCTAssertTrue(topTextField.exists)
+        XCTAssertTrue(resultButton.exists)
+        XCTAssertTrue(segmentedControl.exists)
+        XCTAssertTrue(defalutButton.exists)
+        XCTAssertTrue(customButton.exists)
+        XCTAssertTrue(extraButton.exists)
+        topTextField.tap()
+        topTextField.typeText("Corona")
+        XCTAssertTrue(returnButton.exists)
+        returnButton.tap()
+        resultButton.tap()
         XCTAssertTrue(resultLabel.exists)
+        
+        // Check if result button is hidden
+        extraButton.tap()
+        XCTAssertFalse(resultButton.exists)
     }
     
-    func testSingleWordReversing() throws {
-        textField.tap()
-        textField.typeText("Reverse")
-        doneButton.tap()
+    func testSingleWordReversing_withDefaultSettings() throws {
+        topTextField.tap()
+        topTextField.typeText("Reve12rse")
+        returnButton.tap()
+        resultButton.tap()
+        XCTAssertEqual(resultLabel.label, "esre12veR")
+        resultButton.tap()
+        topTextField.tap()
+        topTextField.typeText("a1bcd")
+        returnButton.tap()
+        resultButton.tap()
+        XCTAssertEqual(resultLabel.label, "d1cba")
+    }
+    
+    func testSingleWordReversing_withCustomSettings() throws {
+        customButton.tap()
+        topTextField.tap()
+        topTextField.typeText("Reve12rse")
+        returnButton.tap()
+        bottomTextField.tap()
+        bottomTextField.typeText("Re")
+        returnButton.tap()
+        resultButton.tap()
+        XCTAssertEqual(resultLabel.label, "Reser21ve")
+        resultButton.tap()
+        extraButton.tap()
+        topTextField.tap()
+        topTextField.typeText("cool")
+        bottomTextField.tap()
+        bottomTextField.typeText("xl")
+        XCTAssertEqual(resultLabel.label, "oocl")
+    }
+    
+    func testMultiWordsReversing_withoutCustomSettings() throws {
+        topTextField.tap()
+        topTextField.typeText("Foxminded cool 24/7")
+        returnButton.tap()
+        resultButton.tap()
+        XCTAssertEqual(resultLabel.label, "dednimxoF looc 24/7")
+        resultButton.tap()
+    }
+    
+    func testSingleWordReversing_withExtraSettings() throws {
+        extraButton.tap()
+        topTextField.tap()
+        topTextField.typeText("Reverse")
+        returnButton.tap()
         XCTAssertEqual(resultLabel.label, "esreveR")
-        reverseButton.tap()
+        bottomTextField.tap()
+        bottomTextField.typeText("Re")
+        XCTAssertEqual(resultLabel.label, "Reserve")
     }
     
-    func testMultiWordsReversing() throws {
-        textField.tap()
-        textField.typeText("Reverse words")
-        doneButton.tap()
-        XCTAssertEqual(resultLabel.label, "esreveR sdrow")
-        reverseButton.tap()
+    func testMultiWordsReversing_withExtraSettings() throws {
+        extraButton.tap()
+        topTextField.tap()
+        topTextField.typeText("Foxminded cool 24/7")
+        returnButton.tap()
+        XCTAssertEqual(resultLabel.label, "dednimxoF looc 7/42")
+        bottomTextField.tap()
+        bottomTextField.typeText("xl")
+        returnButton.tap()
+        XCTAssertEqual(resultLabel.label, "dexdnimoF oocl 7/42")
     }
     
     func testLaunchPerformance() throws {
