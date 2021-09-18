@@ -70,16 +70,13 @@ class ReverseWordsViewController: UIViewController {
             model.settings = .defaultSettings
             bottomTextField.isHidden = true
             descriptionLabel.isHidden = false
-            resultButton.isHidden = false
         case 1:
             model.settings = .customSettings
             bottomTextField.isHidden = false
             descriptionLabel.isHidden = true
-            resultButton.isHidden = false
         case 2:
             model.settings = .extraSettings
             descriptionLabel.isHidden = true
-            resultButton.isHidden = true
             bottomTextField.isHidden = false
             updateResultLabel()
         default:

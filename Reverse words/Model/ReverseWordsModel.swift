@@ -11,51 +11,44 @@ struct ReverseWordsModel {
     
     var exceptionElements = String()
     var settings: ReverseWordsSettings = .defaultSettings
-    
+
     func reverse(string: String) -> String {
         let words = string.components(separatedBy: " ")
         var result = [String]()
-        
+
         for word in words {
             result.append(rearrangeWord(word))
         }
         return String(result.joined(separator: " "))
     }
-    
+
     private func rearrangeWord(_ word: String) -> String {
-        
+
         var arrayOfCharacters = Array(word)
-    
+
         var firstElementIndex = 0
         var secondElementIndex = arrayOfCharacters.count - 1
-        
+
         while firstElementIndex < secondElementIndex {
-            
-            let firstElement = word[firstElementIndex]
-            let secondElement = word[secondElementIndex]
-            
-            switch self {
-            // If both elements are not exceptions
-            case _ where !isException(element: firstElement) &&
-                         !isException(element: secondElement):
-                // Swap them
+
+            if isException(element: word[firstElementIndex]) {
+                // If first element is exception - skip it
+                firstElementIndex += 1
+                // Is second element is exception - skip it
+            } else if isException(element: word[secondElementIndex]) {
+                secondElementIndex -= 1
+            } else {
+                // If both elements are not exceptions - swap them
                 arrayOfCharacters.swapAt(firstElementIndex, secondElementIndex)
                 // Moving towards to the next index of first element in the word
                 firstElementIndex += 1
                 // Moving towards to the previous index of second element in the word
                 secondElementIndex -= 1
-            
-            case _ where isException(element: firstElement):
-                // If first element is exception - skip it
-                firstElementIndex += 1
-            default:
-                // If second element is exception - skip it
-                secondElementIndex -= 1
             }
         }
         return String(arrayOfCharacters)
     }
-    
+
     private func isException(element: String.Element) -> Bool {
         switch settings {
         // If settings are not default
@@ -64,8 +57,8 @@ struct ReverseWordsModel {
                 return false
             }
             return true
-            // If settings are default
-        default:
+        // If settings are default
+        case .defaultSettings:
             if element.isLetter {
                 return false
             }
