@@ -54,10 +54,7 @@ struct ReverseWordsModel {
         switch settings {
         // If settings are not default
         case .customSettings, .extraSettings:
-            if !exceptionElements.contains(element) {
-                return false
-            }
-            return true
+            return exceptionElements.contains(element)
         // If settings are default
         case .defaultSettings:
             if element.isLetter {

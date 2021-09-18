@@ -28,7 +28,6 @@ class ReverseWordsUITests: XCTestCase {
         continueAfterFailure = false
         self.app = XCUIApplication()
         self.app.launch()
-        let elementsQuery = app.scrollViews
         
         self.resultButton = app.buttons[accessibilityIdentifier.resultButton]
         self.topTextField = app.textFields[accessibilityIdentifier.topTextField]
@@ -36,9 +35,9 @@ class ReverseWordsUITests: XCTestCase {
         self.resultLabel = app.staticTexts.element(matching: .any, identifier: accessibilityIdentifier.resultLabel)
         self.returnButton = app.buttons[accessibilityIdentifier.returnButton]
         self.segmentedControl = app.segmentedControls[accessibilityIdentifier.segmentedControl]
-        self.defalutButton = elementsQuery.buttons[accessibilityIdentifier.defaultButton]
-        self.customButton = elementsQuery.buttons[accessibilityIdentifier.customButton]
-        self.extraButton = elementsQuery.buttons[accessibilityIdentifier.extraButton]
+        self.defalutButton = app.buttons[accessibilityIdentifier.defaultButton]
+        self.customButton = app.buttons[accessibilityIdentifier.customButton]
+        self.extraButton = app.buttons[accessibilityIdentifier.extraButton]
     }
     
     override func tearDownWithError() throws {
@@ -58,10 +57,6 @@ class ReverseWordsUITests: XCTestCase {
         returnButton.tap()
         resultButton.tap()
         XCTAssertTrue(resultLabel.exists)
-        
-        // Check if result button is hidden
-        extraButton.tap()
-        XCTAssertFalse(resultButton.exists)
     }
     
     func testSingleWordReversing_withDefaultSettings() throws {
