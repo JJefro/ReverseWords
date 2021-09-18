@@ -7,7 +7,6 @@
 
 import UIKit
 
-@IBDesignable
 class Button: CardButton {
 
     @IBInspectable var isReverseTitle: Bool = true {

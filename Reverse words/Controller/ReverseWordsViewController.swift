@@ -45,7 +45,7 @@ class ReverseWordsViewController: UIViewController {
     
     @IBAction func buttonPressed(_ sender: Button) {
         guard let text = topTextField.text else {return}
-        if resultButton.isEnabled, resultButton.isReverseTitle {
+        if resultButton.isEnabled, resultButton.isReverseTitle, model.settings != .extraSettings {
 
             resultLabel.text = model.reverse(string: text)
             topTextField.isEnabled = false
@@ -56,10 +56,14 @@ class ReverseWordsViewController: UIViewController {
             topTextField.text?.removeAll()
             bottomTextField.text?.removeAll()
 
-            resultButton.isReverseTitle = true
             topTextField.isEnabled = true
             bottomTextField.isEnabled = true
             resultButton.isEnabled = false
+            if model.settings != .extraSettings {
+                resultButton.isReverseTitle = true
+            } else {
+                resultButton.isReverseTitle = false
+            }
         }
     }
     
@@ -70,14 +74,17 @@ class ReverseWordsViewController: UIViewController {
             model.settings = .defaultSettings
             bottomTextField.isHidden = true
             descriptionLabel.isHidden = false
+            resultButton.isReverseTitle = true
         case 1:
             model.settings = .customSettings
             bottomTextField.isHidden = false
             descriptionLabel.isHidden = true
+            resultButton.isReverseTitle = true
         case 2:
             model.settings = .extraSettings
             descriptionLabel.isHidden = true
             bottomTextField.isHidden = false
+            resultButton.isReverseTitle = false
             updateResultLabel()
         default:
             break

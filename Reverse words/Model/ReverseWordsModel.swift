@@ -26,24 +26,25 @@ struct ReverseWordsModel {
 
         var arrayOfCharacters = Array(word)
 
-        var firstElementIndex = 0
-        var secondElementIndex = arrayOfCharacters.count - 1
+        if var firstElementIndex = arrayOfCharacters.indices.first,
+           var secondElementIndex = arrayOfCharacters.indices.last {
 
-        while firstElementIndex < secondElementIndex {
+            while firstElementIndex < secondElementIndex {
 
-            if isException(element: word[firstElementIndex]) {
-                // If first element is exception - skip it
-                firstElementIndex += 1
-                // Is second element is exception - skip it
-            } else if isException(element: word[secondElementIndex]) {
-                secondElementIndex -= 1
-            } else {
-                // If both elements are not exceptions - swap them
-                arrayOfCharacters.swapAt(firstElementIndex, secondElementIndex)
-                // Moving towards to the next index of first element in the word
-                firstElementIndex += 1
-                // Moving towards to the previous index of second element in the word
-                secondElementIndex -= 1
+                if isException(element: word[firstElementIndex]) {
+                    // If first element is exception - skip it
+                    firstElementIndex += 1
+                    // Is second element is exception - skip it
+                } else if isException(element: word[secondElementIndex]) {
+                    secondElementIndex -= 1
+                } else {
+                    // If both elements are not exceptions - swap them
+                    arrayOfCharacters.swapAt(firstElementIndex, secondElementIndex)
+                    // Moving towards to the next index of first element in the word
+                    firstElementIndex += 1
+                    // Moving towards to the previous index of second element in the word
+                    secondElementIndex -= 1
+                }
             }
         }
         return String(arrayOfCharacters)
