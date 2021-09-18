@@ -59,11 +59,7 @@ class ReverseWordsViewController: UIViewController {
             topTextField.isEnabled = true
             bottomTextField.isEnabled = true
             resultButton.isEnabled = false
-            if model.settings != .extraSettings {
-                resultButton.isReverseTitle = true
-            } else {
-                resultButton.isReverseTitle = false
-            }
+            resultButton.isReverseTitle = model.settings != .extraSettings
         }
     }
     
