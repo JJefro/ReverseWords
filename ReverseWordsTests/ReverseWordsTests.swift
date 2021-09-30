@@ -27,13 +27,13 @@ class ReverseWordsTests: XCTestCase {
         // This is an example of a functional test case.
         let singleWordInput1 = "Reve4rse34!"
         let expectedSingleWordOutput1 = "esre4veR34!"
-
+        
         let singleWordInput2 = "a1bcd"
         let expectedSingleWordOutput2 = "d1cba"
-
+        
         let singleWordInput3 = "efg!h"
         let expectedSingleWordOutput3 = "hgf!e"
-        
+
         // Use XCTAssert and related functions to verify your tests produce the correct results.
         XCTAssertEqual(expectedSingleWordOutput1, sut.reverse(string: singleWordInput1))
         XCTAssertEqual(expectedSingleWordOutput2, sut.reverse(string: singleWordInput2))
@@ -41,20 +41,20 @@ class ReverseWordsTests: XCTestCase {
     }
     
     func testStringReverse_MultiWordsReversing_WithoutIgnoringElements() throws {
-
+        
         // This is an example of a functional test case.
         let multiWordsInput1 = "Blackbird singing"
         let expectedMultiWordsOutput1 = "dribkcalB gnignis"
-
+        
         let multiWordsInput2 = "You were only waiting for this moment to arise"
         let expectedMultiWordsOutput2 = "uoY erew ylno gnitiaw rof siht tnemom ot esira"
-
+        
         let multiWordsInput3 = "Take these broken!!! wings and learn to fly"
         let expectedMultiWordsOutput3 = "ekaT eseht nekorb!!! sgniw dna nrael ot ylf"
 
         let multiWordsInput4 = "Foxminded cool 24/7"
         let expectedMultiWordsOutput4 = "dednimxoF looc 24/7"
-
+        
         // Use XCTAssert and related functions to verify your tests produce the correct results.
         XCTAssertEqual(expectedMultiWordsOutput1, sut.reverse(string: multiWordsInput1))
         XCTAssertEqual(expectedMultiWordsOutput2, sut.reverse(string: multiWordsInput2))
@@ -100,5 +100,4 @@ class ReverseWordsTests: XCTestCase {
             // Put the code you want to measure the time of here.
         }
     }
-
 }

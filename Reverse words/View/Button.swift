@@ -18,7 +18,7 @@ class Button: CardButton {
             }
         }
     }
-
+    
     override var isEnabled: Bool {
         didSet {
             UIView.animate(withDuration: 0.5, delay: 0, options: .allowUserInteraction, animations: { [self] in
@@ -26,10 +26,10 @@ class Button: CardButton {
             }, completion: nil)
         }
     }
-
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        
+
         isEnabled = false
 
         setTitle(ButtonTitle.reverse.title, for: .normal)

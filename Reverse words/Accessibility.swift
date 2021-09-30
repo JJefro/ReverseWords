@@ -13,7 +13,7 @@ enum Accessibility {
     case bottomTextField
     case resultLabel
     case segmentedControl
-
+    
     var identifier: String {
         switch self {
         case .resultButton:

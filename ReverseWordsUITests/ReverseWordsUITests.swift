@@ -22,7 +22,7 @@ class ReverseWordsUITests: XCTestCase {
     var defalutButton: XCUIElement!
     var customButton: XCUIElement!
     var extraButton: XCUIElement!
-    
+
     override func setUpWithError() throws {
         
         continueAfterFailure = false
@@ -72,7 +72,7 @@ class ReverseWordsUITests: XCTestCase {
         resultButton.tap()
         XCTAssertEqual(resultLabel.label, "d1cba")
     }
-    
+
     func testSingleWordReversing_withCustomSettings() throws {
         customButton.tap()
         topTextField.tap()
@@ -100,7 +100,7 @@ class ReverseWordsUITests: XCTestCase {
         XCTAssertEqual(resultLabel.label, "dednimxoF looc 24/7")
         resultButton.tap()
     }
-    
+
     func testSingleWordReversing_withExtraSettings() throws {
         extraButton.tap()
         topTextField.tap()
@@ -111,7 +111,7 @@ class ReverseWordsUITests: XCTestCase {
         bottomTextField.typeText("Re")
         XCTAssertEqual(resultLabel.label, "Reserve")
     }
-    
+
     func testMultiWordsReversing_withExtraSettings() throws {
         extraButton.tap()
         topTextField.tap()
@@ -123,7 +123,7 @@ class ReverseWordsUITests: XCTestCase {
         returnButton.tap()
         XCTAssertEqual(resultLabel.label, "dexdnimoF oocl 7/42")
     }
-    
+
     func testLaunchPerformance() throws {
         if #available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 7.0, *) {
             // This measures how long it takes to launch your application.

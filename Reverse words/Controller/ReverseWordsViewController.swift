@@ -16,14 +16,13 @@ class ReverseWordsViewController: UIViewController {
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var scrollView: UIScrollView!
-    
-    var model = ReverseWordsModel()
 
+    var model = ReverseWordsModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         scrollView.delegate = self
-        
         resultLabel.text?.removeAll()
 
         // Accessibility identifiers
@@ -31,12 +30,12 @@ class ReverseWordsViewController: UIViewController {
         topTextField.accessibilityIdentifier = Accessibility.topTextField.identifier
         bottomTextField.accessibilityIdentifier = Accessibility.bottomTextField.identifier
         segmentedControl.accessibilityIdentifier = Accessibility.segmentedControl.identifier
-
+        
         // UITexfield settings
         topTextField.makeLineConstraints()
         topTextField.delegate = self
         topTextField.returnKeyType = .default
-
+        
         bottomTextField.makeLineConstraints()
         bottomTextField.delegate = self
         bottomTextField.returnKeyType = .default
@@ -63,7 +62,7 @@ class ReverseWordsViewController: UIViewController {
         }
     }
     
-    @IBAction func segmentAction(_ sender: UISegmentedControl) {
+    @IBAction func suitDidChange(_ sender: UISegmentedControl) {
         resultLabel.text?.removeAll()
         switch sender.selectedSegmentIndex {
         case 0:
@@ -88,7 +87,7 @@ class ReverseWordsViewController: UIViewController {
             break
         }
     }
-
+    
     @IBAction func topTextFieldEditingChanged(_ sender: CustomTextField) {
         resultButton.isEnabled = true
         if model.settings == .extraSettings {
