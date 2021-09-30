@@ -13,9 +13,8 @@
 		97104EFA26D6898500B472EF /* SF-Pro-Display-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 97104EF926D6898500B472EF /* SF-Pro-Display-Light.otf */; };
 		97104EFC26D6898D00B472EF /* SF-Pro-Display-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 97104EFB26D6898D00B472EF /* SF-Pro-Display-Regular.otf */; };
 		97104EFE26D6F74A00B472EF /* SF-Pro-Display-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 97104EFD26D6F74A00B472EF /* SF-Pro-Display-Semibold.otf */; };
-		9717447E26F4651D00D57187 /* Extension + String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9717447D26F4651D00D57187 /* Extension + String.swift */; };
-		9717448026F4663300D57187 /* ReverseWordsSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9717447F26F4663300D57187 /* ReverseWordsSettings.swift */; };
-		975893FC26EFCA72000977C7 /* Extension + ReverseWordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975893FB26EFCA72000977C7 /* Extension + ReverseWordsViewController.swift */; };
+		9717447A26F3152400D57187 /* Extension + String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9717447926F3152400D57187 /* Extension + String.swift */; };
+		9717447C26F340CE00D57187 /* ReverseWordsSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9717447B26F340CE00D57187 /* ReverseWordsSettings.swift */; };
 		97A2887626D676CD00058D3F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A2887526D676CD00058D3F /* AppDelegate.swift */; };
 		97A2887826D676CD00058D3F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A2887726D676CD00058D3F /* SceneDelegate.swift */; };
 		97A2887A26D676CD00058D3F /* ReverseWordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A2887926D676CD00058D3F /* ReverseWordsViewController.swift */; };
@@ -29,6 +28,8 @@
 		97BE2F7726EA42DA007E12D5 /* ReverseWordsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BE2F7626EA42DA007E12D5 /* ReverseWordsModel.swift */; };
 		97C28ADA26E7E0AB00421CA3 /* UITestsAccessibilityIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C28AD926E7E0AB00421CA3 /* UITestsAccessibilityIdentifiers.swift */; };
 		97C28ADC26E7EF6D00421CA3 /* Accessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C28ADB26E7EF6D00421CA3 /* Accessibility.swift */; };
+		97D96DD4270663AA00719E8F /* ReverseWordsViewController + UITextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D96DD3270663AA00719E8F /* ReverseWordsViewController + UITextFieldDelegate.swift */; };
+		97D96DD6270663EF00719E8F /* ReverseWordsViewController + UIScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D96DD5270663EF00719E8F /* ReverseWordsViewController + UIScrollView.swift */; };
 		FDFAC1375C221CA6A30F166B /* Pods_Reverse_words.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F421E80DBDCD9B0938C98FF /* Pods_Reverse_words.framework */; };
 /* End PBXBuildFile section */
 
@@ -58,9 +59,8 @@
 		97104EF926D6898500B472EF /* SF-Pro-Display-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Light.otf"; sourceTree = "<group>"; };
 		97104EFB26D6898D00B472EF /* SF-Pro-Display-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Regular.otf"; sourceTree = "<group>"; };
 		97104EFD26D6F74A00B472EF /* SF-Pro-Display-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Semibold.otf"; sourceTree = "<group>"; };
-		9717447D26F4651D00D57187 /* Extension + String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + String.swift"; sourceTree = "<group>"; };
-		9717447F26F4663300D57187 /* ReverseWordsSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReverseWordsSettings.swift; sourceTree = "<group>"; };
-		975893FB26EFCA72000977C7 /* Extension + ReverseWordsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + ReverseWordsViewController.swift"; sourceTree = "<group>"; };
+		9717447926F3152400D57187 /* Extension + String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + String.swift"; sourceTree = "<group>"; };
+		9717447B26F340CE00D57187 /* ReverseWordsSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReverseWordsSettings.swift; sourceTree = "<group>"; };
 		97A2887226D676CD00058D3F /* Reverse words.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Reverse words.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		97A2887526D676CD00058D3F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		97A2887726D676CD00058D3F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -80,6 +80,8 @@
 		97BE2F7626EA42DA007E12D5 /* ReverseWordsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReverseWordsModel.swift; sourceTree = "<group>"; };
 		97C28AD926E7E0AB00421CA3 /* UITestsAccessibilityIdentifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITestsAccessibilityIdentifiers.swift; sourceTree = "<group>"; };
 		97C28ADB26E7EF6D00421CA3 /* Accessibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Accessibility.swift; sourceTree = "<group>"; };
+		97D96DD3270663AA00719E8F /* ReverseWordsViewController + UITextFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ReverseWordsViewController + UITextFieldDelegate.swift"; sourceTree = "<group>"; };
+		97D96DD5270663EF00719E8F /* ReverseWordsViewController + UIScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ReverseWordsViewController + UIScrollView.swift"; sourceTree = "<group>"; };
 		CA929C1F0BE618565F815842 /* Pods-Reverse words.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reverse words.debug.xcconfig"; path = "Target Support Files/Pods-Reverse words/Pods-Reverse words.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -146,11 +148,12 @@
 			path = fonts;
 			sourceTree = "<group>";
 		};
-		975893FD26EFCA77000977C7 /* Extensions */ = {
+		975893FA26EFC312000977C7 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				975893FB26EFCA72000977C7 /* Extension + ReverseWordsViewController.swift */,
-				9717447D26F4651D00D57187 /* Extension + String.swift */,
+				97D96DD3270663AA00719E8F /* ReverseWordsViewController + UITextFieldDelegate.swift */,
+				97D96DD5270663EF00719E8F /* ReverseWordsViewController + UIScrollView.swift */,
+				9717447926F3152400D57187 /* Extension + String.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -183,7 +186,7 @@
 				97A2887526D676CD00058D3F /* AppDelegate.swift */,
 				97A2887726D676CD00058D3F /* SceneDelegate.swift */,
 				97C28ADB26E7EF6D00421CA3 /* Accessibility.swift */,
-				975893FD26EFCA77000977C7 /* Extensions */,
+				975893FA26EFC312000977C7 /* Extensions */,
 				970DB56E26EB4912003AFBA2 /* CustomControls */,
 				97A8E15326E2174800123971 /* Model */,
 				97FD462A26D7ABA60066B164 /* View */,
@@ -219,7 +222,7 @@
 			isa = PBXGroup;
 			children = (
 				97BE2F7626EA42DA007E12D5 /* ReverseWordsModel.swift */,
-				9717447F26F4663300D57187 /* ReverseWordsSettings.swift */,
+				9717447B26F340CE00D57187 /* ReverseWordsSettings.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -249,8 +252,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 97A2888626D676CE00058D3F /* Build configuration list for PBXNativeTarget "Reverse words" */;
 			buildPhases = (
-				3169401256F9555627A2F564 /* [CP] Check Pods Manifest.lock */,
 				97BE2F7826EA4BE6007E12D5 /* ShellScript */,
+				3169401256F9555627A2F564 /* [CP] Check Pods Manifest.lock */,
 				97A2886E26D676CD00058D3F /* Sources */,
 				97A2886F26D676CD00058D3F /* Frameworks */,
 				97A2887026D676CD00058D3F /* Resources */,
@@ -417,7 +420,7 @@
 		};
 		97BE2F7826EA4BE6007E12D5 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 12;
 			files = (
 			);
 			inputFileListPaths = (
@@ -439,16 +442,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				97D96DD4270663AA00719E8F /* ReverseWordsViewController + UITextFieldDelegate.swift in Sources */,
 				97A4901C26D96BB900849A7A /* Button.swift in Sources */,
 				97A4901A26D968AC00849A7A /* CustomTextField.swift in Sources */,
-				9717447E26F4651D00D57187 /* Extension + String.swift in Sources */,
 				97BE2F7726EA42DA007E12D5 /* ReverseWordsModel.swift in Sources */,
+				9717447A26F3152400D57187 /* Extension + String.swift in Sources */,
 				97A2887A26D676CD00058D3F /* ReverseWordsViewController.swift in Sources */,
 				97A2887626D676CD00058D3F /* AppDelegate.swift in Sources */,
+				97D96DD6270663EF00719E8F /* ReverseWordsViewController + UIScrollView.swift in Sources */,
 				97C28ADC26E7EF6D00421CA3 /* Accessibility.swift in Sources */,
 				97A2887826D676CD00058D3F /* SceneDelegate.swift in Sources */,
-				9717448026F4663300D57187 /* ReverseWordsSettings.swift in Sources */,
-				975893FC26EFCA72000977C7 /* Extension + ReverseWordsViewController.swift in Sources */,
+				9717447C26F340CE00D57187 /* ReverseWordsSettings.swift in Sources */,
 				970DB57026EB495D003AFBA2 /* CardButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
