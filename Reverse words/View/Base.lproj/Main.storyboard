@@ -20,103 +20,74 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ReverseWordsViewController" customModule="Reverse_words" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" userLabel="ReverseWordsView">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yc5-wK-s56">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0x6-df-YVF">
                                 <rect key="frame" x="0.0" y="88" width="414" height="808"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reverse Words" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eVa-Dm-R6U">
-                                        <rect key="frame" x="91.5" y="20" width="231.5" height="41"/>
+                                        <rect key="frame" x="91.5" y="30" width="231.5" height="41"/>
                                         <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="34"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="4Ce-DY-qeP" userLabel="TextField">
-                                        <rect key="frame" x="16" y="81" width="382" height="320.5"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="4Ce-DY-qeP" userLabel="TextField">
+                                        <rect key="frame" x="16" y="101" width="374" height="300.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This application will reverse your words. Please type text below" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nsh-Nz-gXy">
-                                                <rect key="frame" x="0.0" y="0.0" width="382" height="41"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="41"/>
                                                 <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="17"/>
                                                 <color key="textColor" red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59951636904761907" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Text to reverse" clearsOnBeginEditing="YES" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Lo1-vP-xDB" customClass="CustomTextField" customModule="Reverse_words" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="81" width="382" height="34"/>
+                                                <rect key="frame" x="0.0" y="76" width="374" height="34"/>
                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <accessibility key="accessibilityConfiguration">
                                                     <accessibilityTraits key="traits" keyboardKey="YES"/>
                                                 </accessibility>
-                                                <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="18"/>
+                                                <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                                 <connections>
                                                     <action selector="topTextFieldEditingChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="YRc-sR-xDK"/>
                                                 </connections>
                                             </textField>
-                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="u2o-2a-0OK">
-                                                <rect key="frame" x="0.0" y="155" width="382" height="32"/>
+                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="egH-ja-Wbc">
+                                                <rect key="frame" x="0.0" y="145" width="374" height="32"/>
                                                 <segments>
                                                     <segment title="Default"/>
                                                     <segment title="Custom"/>
                                                     <segment title="Extra"/>
                                                 </segments>
                                                 <connections>
-                                                    <action selector="segmentAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="aYi-v6-Hn3"/>
+                                                    <action selector="suitDidChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="kZL-x6-x6H"/>
                                                 </connections>
                                             </segmentedControl>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Text to ignore" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="S7E-ll-yJh" customClass="CustomTextField" customModule="Reverse_words" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="226" width="382" height="34"/>
-                                                <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="17"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                                <connections>
-                                                    <action selector="bottomTextFieldEditingChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="YRb-Ns-fYc"/>
-                                                </connections>
-                                            </textField>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="All characters except alphabetic symbols" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WYX-e5-wGe">
-                                                <rect key="frame" x="0.0" y="300" width="382" height="20.5"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="All characters except alphabetic symbols" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7EI-uW-ljN">
+                                                <rect key="frame" x="0.0" y="211" width="374" height="20.5"/>
                                                 <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="17"/>
                                                 <color key="textColor" white="0.63215690560000004" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Text to ignore" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bav-Oi-cOo" customClass="CustomTextField" customModule="Reverse_words" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="266.5" width="374" height="34"/>
+                                                <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <action selector="bottomTextFieldEditingChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="AIo-FM-VKp"/>
+                                                </connections>
+                                            </textField>
                                         </subviews>
                                     </stackView>
-                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N6D-aq-APd">
-                                        <rect key="frame" x="16" y="422.5" width="382" height="309.5"/>
-                                        <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xdL-Ne-ylU">
-                                                <rect key="frame" x="0.0" y="0.0" width="401.5" height="500"/>
-                                                <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="result" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Lf-iB-GhT">
-                                                        <rect key="frame" x="16" y="0.0" width="55.5" height="29"/>
-                                                        <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="24"/>
-                                                        <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                </subviews>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="1Lf-iB-GhT" secondAttribute="trailing" constant="20" symbolic="YES" id="7fp-OH-Ig1"/>
-                                                    <constraint firstAttribute="height" constant="500" id="WUH-U1-3oN"/>
-                                                    <constraint firstItem="1Lf-iB-GhT" firstAttribute="leading" secondItem="xdL-Ne-ylU" secondAttribute="leading" constant="16" id="aqG-Yp-E9q"/>
-                                                    <constraint firstItem="1Lf-iB-GhT" firstAttribute="top" secondItem="xdL-Ne-ylU" secondAttribute="top" id="hm1-Vp-zfW"/>
-                                                    <constraint firstAttribute="width" constant="401.5" id="xsH-Jm-CDE"/>
-                                                </constraints>
-                                            </view>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="xdL-Ne-ylU" secondAttribute="trailing" id="0ys-6O-xB2"/>
-                                            <constraint firstAttribute="bottom" secondItem="xdL-Ne-ylU" secondAttribute="bottom" id="ZZ5-m1-b27"/>
-                                            <constraint firstItem="xdL-Ne-ylU" firstAttribute="leading" secondItem="N6D-aq-APd" secondAttribute="leading" id="rk2-n1-eDB"/>
-                                            <constraint firstItem="xdL-Ne-ylU" firstAttribute="top" secondItem="N6D-aq-APd" secondAttribute="top" id="wcM-eq-tAb"/>
-                                        </constraints>
-                                    </scrollView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eGJ-py-bd8" customClass="Button" customModule="Reverse_words" customModuleProvider="target">
                                         <rect key="frame" x="35.5" y="732" width="343" height="56"/>
                                         <color key="backgroundColor" red="0.0" green="0.47843137254901957" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="56" id="SFj-C6-aRk"/>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="343" id="VNd-1N-wMn"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="343" id="3MX-Qj-7EU"/>
+                                            <constraint firstAttribute="height" constant="56" id="nPa-JU-GQM"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="56" id="yWK-cE-feV"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="17"/>
                                         <state key="normal" title="Button">
@@ -126,40 +97,71 @@
                                             <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KzV-6I-O4m"/>
                                         </connections>
                                     </button>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m8G-fd-8WN">
+                                        <rect key="frame" x="16" y="426.5" width="382" height="305.5"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TwU-N0-4kH">
+                                                <rect key="frame" x="0.0" y="0.0" width="382" height="800"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Result" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Lf-iB-GhT">
+                                                        <rect key="frame" x="16" y="20" width="350" height="29"/>
+                                                        <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="24"/>
+                                                        <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstItem="1Lf-iB-GhT" firstAttribute="leading" secondItem="TwU-N0-4kH" secondAttribute="leading" constant="16" id="Bb4-b2-CBC"/>
+                                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="384" id="Iru-A1-q8x"/>
+                                                    <constraint firstAttribute="height" constant="800" id="ULM-ja-CF0"/>
+                                                    <constraint firstItem="1Lf-iB-GhT" firstAttribute="top" secondItem="TwU-N0-4kH" secondAttribute="top" constant="20" id="Y7X-4W-ymb"/>
+                                                    <constraint firstAttribute="trailing" secondItem="1Lf-iB-GhT" secondAttribute="trailing" constant="16" id="lLs-Li-bbm"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="TwU-N0-4kH" firstAttribute="bottom" secondItem="m8G-fd-8WN" secondAttribute="bottom" id="1IC-3e-55B"/>
+                                            <constraint firstItem="TwU-N0-4kH" firstAttribute="leading" secondItem="m8G-fd-8WN" secondAttribute="leading" id="P0I-3s-mgG"/>
+                                            <constraint firstItem="TwU-N0-4kH" firstAttribute="centerX" secondItem="m8G-fd-8WN" secondAttribute="centerX" id="aWD-2y-W5b"/>
+                                            <constraint firstItem="TwU-N0-4kH" firstAttribute="trailing" secondItem="m8G-fd-8WN" secondAttribute="trailing" id="mQf-kD-dsK"/>
+                                            <constraint firstItem="TwU-N0-4kH" firstAttribute="top" secondItem="m8G-fd-8WN" secondAttribute="top" id="vId-Cg-btg"/>
+                                        </constraints>
+                                    </scrollView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstItem="eVa-Dm-R6U" firstAttribute="centerX" secondItem="yc5-wK-s56" secondAttribute="centerX" id="83p-FW-hZ9"/>
-                                    <constraint firstItem="N6D-aq-APd" firstAttribute="top" secondItem="4Ce-DY-qeP" secondAttribute="bottom" constant="21" id="AWn-zH-0Wy"/>
-                                    <constraint firstItem="eGJ-py-bd8" firstAttribute="top" secondItem="N6D-aq-APd" secondAttribute="bottom" id="QW6-JD-hVh"/>
-                                    <constraint firstItem="eGJ-py-bd8" firstAttribute="centerX" secondItem="yc5-wK-s56" secondAttribute="centerX" id="UAs-J3-ejD"/>
-                                    <constraint firstItem="eVa-Dm-R6U" firstAttribute="top" secondItem="yc5-wK-s56" secondAttribute="top" constant="20" id="Vlm-rL-q76"/>
-                                    <constraint firstAttribute="bottom" secondItem="eGJ-py-bd8" secondAttribute="bottom" constant="20" id="ZDs-ps-YZI"/>
-                                    <constraint firstAttribute="trailing" secondItem="N6D-aq-APd" secondAttribute="trailing" constant="16" id="bYU-8C-BGS"/>
-                                    <constraint firstAttribute="trailing" secondItem="4Ce-DY-qeP" secondAttribute="trailing" constant="16" id="fIU-Kt-ewy"/>
-                                    <constraint firstItem="N6D-aq-APd" firstAttribute="leading" secondItem="yc5-wK-s56" secondAttribute="leading" constant="16" id="iS6-96-ufW"/>
-                                    <constraint firstItem="4Ce-DY-qeP" firstAttribute="leading" secondItem="yc5-wK-s56" secondAttribute="leading" constant="16" id="iZC-eV-c7D"/>
-                                    <constraint firstItem="4Ce-DY-qeP" firstAttribute="top" secondItem="eVa-Dm-R6U" secondAttribute="bottom" constant="20" id="xVQ-tC-CJ2"/>
+                                    <constraint firstItem="m8G-fd-8WN" firstAttribute="leading" secondItem="0x6-df-YVF" secondAttribute="leading" constant="16" id="BuF-oK-bGC"/>
+                                    <constraint firstItem="eVa-Dm-R6U" firstAttribute="centerX" secondItem="0x6-df-YVF" secondAttribute="centerX" id="DFH-9f-3ah"/>
+                                    <constraint firstAttribute="trailing" secondItem="m8G-fd-8WN" secondAttribute="trailing" constant="16" id="Ms2-LF-ddU"/>
+                                    <constraint firstItem="eVa-Dm-R6U" firstAttribute="top" secondItem="0x6-df-YVF" secondAttribute="top" constant="30" id="OXc-tj-3s5"/>
+                                    <constraint firstItem="eGJ-py-bd8" firstAttribute="centerX" secondItem="0x6-df-YVF" secondAttribute="centerX" id="Oxs-IX-4z0"/>
+                                    <constraint firstAttribute="bottom" secondItem="eGJ-py-bd8" secondAttribute="bottom" constant="20" id="R0f-r0-KTo"/>
+                                    <constraint firstItem="4Ce-DY-qeP" firstAttribute="leading" secondItem="0x6-df-YVF" secondAttribute="leading" constant="16" id="ega-Ef-8qY"/>
+                                    <constraint firstAttribute="trailing" secondItem="4Ce-DY-qeP" secondAttribute="trailing" constant="24" id="mOO-i6-amS"/>
+                                    <constraint firstItem="m8G-fd-8WN" firstAttribute="top" secondItem="4Ce-DY-qeP" secondAttribute="bottom" constant="25" id="qfp-rk-v09"/>
+                                    <constraint firstItem="eGJ-py-bd8" firstAttribute="top" secondItem="m8G-fd-8WN" secondAttribute="bottom" id="tQG-Os-lnJ"/>
+                                    <constraint firstItem="4Ce-DY-qeP" firstAttribute="top" secondItem="eVa-Dm-R6U" secondAttribute="bottom" constant="30" id="vpY-Iy-KDq"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="yc5-wK-s56" secondAttribute="trailing" id="BIZ-BH-G2m"/>
-                            <constraint firstItem="yc5-wK-s56" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="SJj-JT-UiT"/>
-                            <constraint firstItem="yc5-wK-s56" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="apd-pQ-nBV"/>
-                            <constraint firstAttribute="bottom" secondItem="yc5-wK-s56" secondAttribute="bottom" id="mHx-5x-0iG"/>
+                            <constraint firstItem="0x6-df-YVF" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="1x8-S6-Buh"/>
+                            <constraint firstAttribute="trailing" secondItem="0x6-df-YVF" secondAttribute="trailing" id="SXP-bp-lnH"/>
+                            <constraint firstItem="0x6-df-YVF" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="bR4-Zq-FFb"/>
+                            <constraint firstAttribute="bottom" secondItem="0x6-df-YVF" secondAttribute="bottom" id="zf8-JU-CRw"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Reverse Words" id="tTH-5e-B7h"/>
                     <connections>
-                        <outlet property="bottomTextField" destination="S7E-ll-yJh" id="84e-0G-P94"/>
-                        <outlet property="descriptionLabel" destination="WYX-e5-wGe" id="7bU-MH-MuC"/>
+                        <outlet property="bottomTextField" destination="bav-Oi-cOo" id="ukv-vY-ITe"/>
+                        <outlet property="descriptionLabel" destination="7EI-uW-ljN" id="mFO-Dy-0gI"/>
                         <outlet property="resultButton" destination="eGJ-py-bd8" id="y5j-NO-n16"/>
                         <outlet property="resultLabel" destination="1Lf-iB-GhT" id="0YL-vz-HZB"/>
-                        <outlet property="scrollView" destination="N6D-aq-APd" id="qe6-DX-pnH"/>
-                        <outlet property="segmentedControl" destination="u2o-2a-0OK" id="fag-Jl-Kav"/>
+                        <outlet property="scrollView" destination="m8G-fd-8WN" id="Blu-fT-LVW"/>
+                        <outlet property="segmentedControl" destination="egH-ja-Wbc" id="b83-8e-zO4"/>
                         <outlet property="topTextField" destination="Lo1-vP-xDB" id="3a4-EH-0cd"/>
                     </connections>
                 </viewController>
